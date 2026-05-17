@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ElektrikliRota.Application/ElektrikliRota.Application.csproj" />
+  <Project Path="ElektrikliRota.Core/ElektrikliRota.Core.csproj" />
+  <Project Path="ElektrikliRota.Infrastructure/ElektrikliRota.Infrastructure.csproj" />
+  <Project Path="ElektrikliRota.UnitTests/ElektrikliRota.UnitTests.csproj" />
+  <Project Path="ElektrikliRota.WebApi/ElektrikliRota.WebApi.csproj" />
+</Solution>
