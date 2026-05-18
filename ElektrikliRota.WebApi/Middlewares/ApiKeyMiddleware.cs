@@ -45,9 +45,11 @@ public class ApiKeyMiddleware
             return;
         }
 
-        // X-Api-Key header kontrolü
-        if (!context.Request.Headers.TryGetValue("X-Api-Key", out var extractedApiKey) ||
-            extractedApiKey != _apiKey)
+        // API Key'i Header'dan veya Query String'den al
+        var extractedApiKey = context.Request.Headers["X-Api-Key"].FirstOrDefault() 
+                              ?? context.Request.Query["key"].FirstOrDefault();
+
+        if (string.IsNullOrEmpty(extractedApiKey) || extractedApiKey != _apiKey)
         {
             context.Response.StatusCode = 403;
             context.Response.ContentType = "application/json";
