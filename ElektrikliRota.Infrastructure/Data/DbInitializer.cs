@@ -27,8 +27,23 @@ public static class DbInitializer
             {
                 var opts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
                 var teslaData = JsonSerializer.Deserialize<List<Station>>(File.ReadAllText(teslaJsonPath), opts);
-                if (teslaData != null) stations.AddRange(teslaData);
+                if (teslaData != null) 
+                {
+                    foreach(var t in teslaData) 
+                    {
+                        t.MaxPowerKw = 250; // Tesla V3 Superchargers are typically 250 kW
+                        stations.Add(t);
+                    }
+                }
             }
+
+            var esarjJsonPath = Path.Combine(dataPath, "esarj.json");
+            if (File.Exists(esarjJsonPath))
+                ParseEsarjJson(esarjJsonPath, stations);
+
+            var sharzJsonPath = Path.Combine(dataPath, "sharz-ovolt.json");
+            if (File.Exists(sharzJsonPath))
+                ParseSharzOvoltJson(sharzJsonPath, stations);
 
             if (stations.Count > 0)
             {
@@ -149,11 +164,12 @@ public static class DbInitializer
                     Name              = NonEmpty(s.Name, "Bilinmeyen İstasyon"),
                     Latitude          = s.Latitude,
                     Longitude         = s.Longitude,
-                    Brand             = DetectBrand(s.Name, s.IsZesStation),
+                    Brand             = "ZES",
                     IsFastCharge      = s.DcConnectorCount > 0 || s.HpcConnectorCount > 0,
                     AcConnectorCount  = s.AcConnectorCount,
                     DcConnectorCount  = s.DcConnectorCount,
                     HpcConnectorCount = s.HpcConnectorCount,
+                    MaxPowerKw        = s.MaxElectricPower > 0 ? s.MaxElectricPower : null,
                 });
             }
         }
@@ -169,11 +185,12 @@ public static class DbInitializer
                     Name              = NonEmpty(s.Name, "Bilinmeyen İstasyon"),
                     Latitude          = s.Latitude,
                     Longitude         = s.Longitude,
-                    Brand             = DetectBrand(s.Name, false),
+                    Brand             = "ZES",
                     IsFastCharge      = s.DcConnectorCount > 0 || s.HpcConnectorCount > 0,
                     AcConnectorCount  = s.AcConnectorCount,
                     DcConnectorCount  = s.DcConnectorCount,
                     HpcConnectorCount = s.HpcConnectorCount,
+                    MaxPowerKw        = s.MaxElectricPower > 0 ? s.MaxElectricPower : null,
                 });
             }
         }
@@ -241,6 +258,11 @@ public static class DbInitializer
                 else                                   dc  = 1; // bilinmeyen = DC kabul
             }
 
+            int? maxPowerKw = null;
+            if (hpc > 0) maxPowerKw = 180;
+            else if (dc > 0) maxPowerKw = 120;
+            else if (ac > 0) maxPowerKw = 22;
+
             result.Add(new Station
             {
                 Id                = Guid.NewGuid(),
@@ -252,8 +274,114 @@ public static class DbInitializer
                 AcConnectorCount  = ac,
                 DcConnectorCount  = dc,
                 HpcConnectorCount = hpc,
+                MaxPowerKw        = maxPowerKw,
             });
         }
+    }
+
+    // ─── Eşarj JSON parser ───────────────────────────────────────────────────
+    private static void ParseEsarjJson(string path, List<Station> result)
+    {
+        var opts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var data = JsonSerializer.Deserialize<EsarjRoot>(File.ReadAllText(path), opts);
+        if (data?.Data == null) return;
+
+        foreach (var s in data.Data)
+        {
+            if (IsDuplicate(result, s.Latitude, s.Longitude)) continue;
+            
+            int maxPower = 0;
+            if (s.ConnectorNominalPowers != null)
+            {
+                foreach(var el in s.ConnectorNominalPowers) 
+                {
+                    if (el.ValueKind == JsonValueKind.Number && el.TryGetDouble(out double d)) 
+                        maxPower = Math.Max(maxPower, (int)d);
+                    else if (el.ValueKind == JsonValueKind.String && double.TryParse(el.GetString(), out double ds))
+                        maxPower = Math.Max(maxPower, (int)ds);
+                }
+            }
+
+            int hpc = 0, dc = s.DcConnectors;
+            if (maxPower >= 150 && dc > 0)
+            {
+                hpc = dc;
+                dc = 0;
+            }
+
+            result.Add(new Station
+            {
+                Id                = Guid.NewGuid(),
+                Name              = NonEmpty(s.StoreName, "Eşarj İstasyonu"),
+                Latitude          = s.Latitude,
+                Longitude         = s.Longitude,
+                Brand             = "Eşarj",
+                IsFastCharge      = dc > 0 || hpc > 0,
+                AcConnectorCount  = s.AcConnectors,
+                DcConnectorCount  = dc,
+                HpcConnectorCount = hpc,
+                MaxPowerKw        = maxPower > 0 ? maxPower : null,
+            });
+        }
+    }
+
+    // ─── Sharz / Ovolt JSON parser ───────────────────────────────────────────
+    private static void ParseSharzOvoltJson(string path, List<Station> result)
+    {
+        var opts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var data = JsonSerializer.Deserialize<SharzOvoltRoot>(File.ReadAllText(path), opts);
+        if (data?.Result?.Stations == null) return;
+
+        foreach (var s in data.Result.Stations)
+        {
+            if (IsDuplicate(result, s.Lat, s.Lon)) continue;
+            
+            string brand = s.CompanyId == 2 ? "Ovolt" : (s.CompanyId == 3 ? "Sharz.net" : "Diğer");
+            
+            int maxPower = 0;
+            if (s.Powers != null)
+            {
+                foreach(var el in s.Powers) 
+                {
+                    if (el.ValueKind == JsonValueKind.Number && el.TryGetDouble(out double d)) 
+                        maxPower = Math.Max(maxPower, (int)d);
+                    else if (el.ValueKind == JsonValueKind.String && double.TryParse(el.GetString(), out double ds))
+                        maxPower = Math.Max(maxPower, (int)ds);
+                }
+            }
+            
+            int ac = GetTotalFromText(s.Ac?.Text);
+            int dcRaw = GetTotalFromText(s.Dc?.Text);
+            
+            int hpc = 0, dc = dcRaw;
+            if (maxPower >= 150 && dc > 0)
+            {
+                hpc = dc;
+                dc = 0;
+            }
+
+            result.Add(new Station
+            {
+                Id                = Guid.NewGuid(),
+                Name              = NonEmpty(s.Name, brand + " İstasyonu"),
+                Latitude          = s.Lat,
+                Longitude         = s.Lon,
+                Brand             = brand,
+                IsFastCharge      = dc > 0 || hpc > 0,
+                AcConnectorCount  = ac,
+                DcConnectorCount  = dc,
+                HpcConnectorCount = hpc,
+                MaxPowerKw        = maxPower > 0 ? maxPower : null,
+            });
+        }
+    }
+    
+    private static int GetTotalFromText(string? text)
+    {
+        if (string.IsNullOrWhiteSpace(text)) return 0;
+        var parts = text.Split('/');
+        if (parts.Length == 2 && int.TryParse(parts[1], out int total)) return total;
+        return 0;
     }
 
     // ─── Yardımcı metodlar ────────────────────────────────────────────────────
@@ -263,29 +391,6 @@ public static class DbInitializer
 
     private static string NonEmpty(string? s, string fallback) =>
         string.IsNullOrWhiteSpace(s) ? fallback : s;
-
-    private static string DetectBrand(string? name, bool isZesStation)
-    {
-        if (string.IsNullOrWhiteSpace(name)) return isZesStation ? "ZES" : "Other";
-        var n = name.ToLowerInvariant();
-
-        if (n.Contains("trugo"))                               return "Trugo";
-        if (n.Contains("eşarj") || n.Contains("esarj"))       return "Eşarj";
-        if (n.Contains("voltrun"))                             return "Voltrun";
-        if (n.Contains("sharz"))                               return "Sharz";
-        if (n.Contains("oksijen"))                             return "Oksijen";
-        if (n.Contains("tşof") || n.Contains("tsof"))         return "TŞOF";
-        if (n.Contains("toroslar"))                            return "Toroslar";
-        if (n.Contains("shell"))                               return "Shell";
-        if (n.Contains("opet"))                               return "Opet";
-        if (n.Contains("lukoil"))                              return "Lukoil";
-        if (n.Contains("petrol ofisi") || n.Contains("p.o.")) return "Petrol Ofisi";
-        if (n.Contains("total"))                               return "Total";
-        if (n.Contains("bp "))                                 return "BP";
-
-        if (isZesStation) return "ZES";
-        return "Other";
-    }
 }
 
 // ── Deserialization modelleri ──────────────────────────────────────────────────
@@ -305,6 +410,7 @@ public class StationLocationJson
     public int     AcConnectorCount  { get; set; }
     public int     DcConnectorCount  { get; set; }
     public int     HpcConnectorCount { get; set; }
+    public int     MaxElectricPower  { get; set; }
 }
 
 public class StationJson
@@ -315,4 +421,42 @@ public class StationJson
     public int     AcConnectorCount  { get; set; }
     public int     DcConnectorCount  { get; set; }
     public int     HpcConnectorCount { get; set; }
+    public int     MaxElectricPower  { get; set; }
+}
+
+public class EsarjRoot
+{
+    public List<EsarjStation>? Data { get; set; }
+}
+public class EsarjStation
+{
+    public string? StoreName { get; set; }
+    public double Latitude { get; set; }
+    public double Longitude { get; set; }
+    public int AcConnectors { get; set; }
+    public int DcConnectors { get; set; }
+    public List<JsonElement>? ConnectorNominalPowers { get; set; }
+}
+
+public class SharzOvoltRoot
+{
+    public SharzOvoltResult? Result { get; set; }
+}
+public class SharzOvoltResult
+{
+    public List<SharzOvoltStation>? Stations { get; set; }
+}
+public class SharzOvoltStation
+{
+    public string? Name { get; set; }
+    public double Lat { get; set; }
+    public double Lon { get; set; }
+    public int CompanyId { get; set; }
+    public List<JsonElement>? Powers { get; set; }
+    public SharzOvoltConnector? Ac { get; set; }
+    public SharzOvoltConnector? Dc { get; set; }
+}
+public class SharzOvoltConnector
+{
+    public string? Text { get; set; }
 }

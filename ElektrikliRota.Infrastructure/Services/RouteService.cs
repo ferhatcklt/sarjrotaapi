@@ -19,13 +19,14 @@ public class RouteService : IRouteService
 
     private static readonly Dictionary<string, double> ChargePrices = new(StringComparer.OrdinalIgnoreCase)
     {
-        { "ZES", 14.50 },
+        { "ZES", 16.49 },
         { "Eşarj", 13.50 },
         { "Trugo", 14.98 },
         { "Tesla", 12.30 },
         { "Voltrun", 14.00 },
-        { "Sharz.net", 14.00 },
-        { "Astor", 14.00 }
+        { "Sharz.net", 10.99 },
+        { "Astor", 14.00 },
+        { "Ovolt", 13.99 }
     };
     private const double DefaultChargePrice = 14.00;
 

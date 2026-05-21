@@ -11,6 +11,7 @@ public class Station
     public int AcConnectorCount { get; set; }
     public int DcConnectorCount { get; set; }
     public int HpcConnectorCount { get; set; }
+    public int? MaxPowerKw { get; set; }
 
     [System.ComponentModel.DataAnnotations.Schema.NotMapped]
     public int? ArrivalChargePercentage { get; set; }
