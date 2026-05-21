@@ -155,7 +155,12 @@ public static class DbInitializer
             V("a0000093-0000-0000-0000-000000000001","Volvo","XC40 Recharge Twin",530,82.0),
             V("a0000094-0000-0000-0000-000000000001","Dacia","Spring",230,26.8),
             V("a0000095-0000-0000-0000-000000000001","Peugeot","e-208 (54 kWh)",400,54.0),
-            V("a0000096-0000-0000-0000-000000000001","BYD","Seal U EV",500,71.8)
+            V("a0000096-0000-0000-0000-000000000001","BYD","Seal U EV Comfort (71.8 kWh)",420,71.8),
+            V("a0000097-0000-0000-0000-000000000001","BYD","Seal U EV Design (87 kWh)",500,87.0),
+            V("a0000098-0000-0000-0000-000000000001","Fiat","Grande Panda Electric",320,44.0),
+            V("a0000099-0000-0000-0000-000000000001","Hyundai","Inster Standard Range",300,42.0),
+            V("a0000100-0000-0000-0000-000000000001","Hyundai","Inster Long Range",355,49.0),
+            V("a0000101-0000-0000-0000-000000000001","Citroen","e-C3",320,44.0)
         };
         context.Vehicles.AddRange(v);
         context.SaveChanges();
