@@ -23,22 +23,23 @@ public class GlobalExceptionMiddleware
         catch (Exception ex)
         {
             _logger.LogError(ex, "Sunucuda beklenmeyen bir hata oluştu.");
-            await HandleExceptionAsync(context);
+            await HandleExceptionAsync(context, ex);
         }
     }
 
-    private static Task HandleExceptionAsync(HttpContext context)
+    private static async Task HandleExceptionAsync(HttpContext context, Exception ex)
     {
         context.Response.ContentType = "application/json";
-        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+        context.Response.StatusCode = 500;
 
         var response = new
         {
-            StatusCode = context.Response.StatusCode,
+            StatusCode = 500,
             Message = "Sunucu tarafında beklenmeyen bir hata oluştu. Lütfen daha sonra tekrar deneyin.",
-            Detailed = "Detaylı hata logları sunucu tarafında kayıt altına alınmıştır."
+            Detailed = ex.Message,
+            StackTrace = ex.StackTrace
         };
 
-        return context.Response.WriteAsync(JsonSerializer.Serialize(response));
+        await context.Response.WriteAsync(JsonSerializer.Serialize(response));
     }
 }
