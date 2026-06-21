@@ -14,4 +14,8 @@ if [ "$1" == "--reset-db" ]; then
 fi
 
 echo "✓ Port 5261 serbest, API başlatılıyor..."
-dotnet run --project ElektrikliRota.WebApi
+if [ -f "$HOME/.dotnet/dotnet" ]; then
+  $HOME/.dotnet/dotnet run --project ElektrikliRota.WebApi
+else
+  dotnet run --project ElektrikliRota.WebApi
+fi
