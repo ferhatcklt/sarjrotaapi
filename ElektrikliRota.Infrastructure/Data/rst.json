@@ -1,0 +1,378 @@
+[
+  {
+    "Name": "Afyon Dı̇nar Küçük Sanayı̇",
+    "Latitude": 38.04577777777778,
+    "Longitude": 30.109305555555558,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Afyon Çı̇vrı̇l Lukoı̇l Petrol",
+    "Latitude": 38.59858333333334,
+    "Longitude": 31.028583333333334,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Afyon Dalyan Petrol",
+    "Latitude": 38.302,
+    "Longitude": 30.192166666666665,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Eskı̇şehı̇r Nasrettı̇n Hoca",
+    "Latitude": 39.53615484597088,
+    "Longitude": 31.663447711095174,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Eskı̇şehı̇r Rota Dı̇nlenme Tesı̇sı̇",
+    "Latitude": 39.53601334396095,
+    "Longitude": 31.65338530239802,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Eskı̇şehı̇r Orhan Kardeşler",
+    "Latitude": 39.581325796987414,
+    "Longitude": 30.916596692603214,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Eskı̇şehı̇r Meta Fox Akaryakıt",
+    "Latitude": 39.55372495012338,
+    "Longitude": 31.016564473114943,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Eskı̇şehı̇r Fox Akaryakıt",
+    "Latitude": 39.44211915965763,
+    "Longitude": 31.514018852824467,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Türkoı̇l-şahmeran Petrol",
+    "Latitude": 39.158896240326136,
+    "Longitude": 30.147220514244726,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Kütahya Tavukçu Yakup Restoran",
+    "Latitude": 38.924005861920655,
+    "Longitude": 29.303167268014835,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Uşak 7 Kıta Petrol Banaz",
+    "Latitude": 38.72559148397919,
+    "Longitude": 29.73110022257089,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Uşak Termo Petrol",
+    "Latitude": 38.5034072097638,
+    "Longitude": 29.67764498486985,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Uşak Kadoı̇l Petrol",
+    "Latitude": 38.61755433368819,
+    "Longitude": 28.8897733061471,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Bı̇lecı̇k Poyra Mahallesı̇",
+    "Latitude": 39.86566594122223,
+    "Longitude": 30.208311662585807,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Bı̇lecı̇k Vezı̇rhan",
+    "Latitude": 40.25095128591831,
+    "Longitude": 30.02240667183992,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Sı̇vas Hafı̇k Lukoı̇l",
+    "Latitude": 39.86025,
+    "Longitude": 37.40977777777778,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Sı̇vas Dı̇vrı̇ğı̇ Sunpet",
+    "Latitude": 39.388044471554096,
+    "Longitude": 38.110015887731144,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Sı̇vas Yıldızelı̇ Aytemı̇z",
+    "Latitude": 39.86989049385186,
+    "Longitude": 36.59096419083003,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Sı̇vas Merkez Devecı̇ Petrol",
+    "Latitude": 39.74365840706198,
+    "Longitude": 37.0273222202398,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Erzı̇ncan Meva Hotel",
+    "Latitude": 39.74731053234037,
+    "Longitude": 39.477783395153274,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Erzı̇ncan Seyrı̇dem Park",
+    "Latitude": 39.75104056865367,
+    "Longitude": 39.4598291951026,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Tuncelı̇ Mazgı̇rt Lukoı̇l",
+    "Latitude": 38.92961871197203,
+    "Longitude": 39.61730815941904,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Tuncelı̇ Petrol Ofı̇sı̇",
+    "Latitude": 39.07365782630736,
+    "Longitude": 39.532780927119475,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Tuncelı̇ Mazgı̇rt Teco",
+    "Latitude": 38.868833333333335,
+    "Longitude": 39.72016666666667,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Bı̇ngöl 33 Şehı̇tlı̇k Anıtı",
+    "Latitude": 38.93069444444444,
+    "Longitude": 40.35616666666667,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Antalya Demı̇roğlu Çöpşı̇ş",
+    "Latitude": 36.95316666666667,
+    "Longitude": 30.62177777777778,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Antalya Muratpaşa Kadoı̇l",
+    "Latitude": 36.88824983494465,
+    "Longitude": 30.7358386067466,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Antalya Class Petrol",
+    "Latitude": 36.570391156903234,
+    "Longitude": 31.910284864417797,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Antalya Shell Aksu",
+    "Latitude": 36.89177563191089,
+    "Longitude": 30.82174205830871,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Antalya Total Manavgat",
+    "Latitude": 36.89080432686621,
+    "Longitude": 31.25043179202905,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Elazığ Kovancılar Po",
+    "Latitude": 40.206032987559944,
+    "Longitude": 28.996184164417794,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Elazığ Paşa Petrol",
+    "Latitude": 38.585638888888894,
+    "Longitude": 39.35480555555556,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Elazığ Keklı̇ktepe Teco",
+    "Latitude": 38.67261111111111,
+    "Longitude": 39.24313888888889,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Elazığ Sanayı̇ Dı̇rı̇lı̇ş",
+    "Latitude": 38.673154552968526,
+    "Longitude": 39.24284285274846,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Elazığ Sı̇vrı̇ce Kardelen",
+    "Latitude": 38.60270548222601,
+    "Longitude": 39.255492677911,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Malatya Can Otopark",
+    "Latitude": 38.34690315041446,
+    "Longitude": 38.317012466266995,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Malatya Saray Havuzbaşı",
+    "Latitude": 38.33395404999335,
+    "Longitude": 38.22766407715947,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "Malatya Opet Kuzu Rest",
+    "Latitude": 38.3376824979023,
+    "Longitude": 38.26966950137638,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "İstanbul Başakşehı̇r Bp",
+    "Latitude": 41.104,
+    "Longitude": 28.782888888888888,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "İstanbul Güngören Class",
+    "Latitude": 41.00221128771372,
+    "Longitude": 28.886161938719095,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "İstanbul Kadıköy Class",
+    "Latitude": 40.990612162346295,
+    "Longitude": 29.076749452799127,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "İstanbul Küçükcekmece Class",
+    "Latitude": 41.00013888888889,
+    "Longitude": 28.800833333333333,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "İstanbul Pendı̇k Bp",
+    "Latitude": 40.88475,
+    "Longitude": 29.23541666666667,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "İstanbul Pendı̇k Class",
+    "Latitude": 40.87984443104377,
+    "Longitude": 29.22076452556162,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "İstanbul Pendı̇k Class -2",
+    "Latitude": 40.88430111726622,
+    "Longitude": 29.23582848523177,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "İstanbul Sancaktepe Class",
+    "Latitude": 41.0074369894081,
+    "Longitude": 29.188034616592084,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  },
+  {
+    "Name": "İstanbul Yenı̇bosna Shell",
+    "Latitude": 41.01,
+    "Longitude": 28.830972222222222,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 120
+  }
+]

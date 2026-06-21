@@ -22,6 +22,9 @@ public class RouteRequestDto
 
     [Range(1, 100)]
     public int InitialChargePercentage { get; set; } = 100;
+
+    [Range(-50, 100)]
+    public int AdditionalConsumptionPercent { get; set; } = 0;
 }
 
 public class LocationDto

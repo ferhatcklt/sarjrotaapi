@@ -1,0 +1,1642 @@
+[
+  {
+    "Name": "1915 Gelı̇bolu Batı - Çanakkale Yönü",
+    "Latitude": 40.39911858127443,
+    "Longitude": 26.614708300000007,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "1915 Gelı̇bolu Doğu - İstanbul Yönü",
+    "Latitude": 40.39914995543804,
+    "Longitude": 26.616916812806984,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Ab Dı̇vanpark 3 Konutları",
+    "Latitude": 39.99552973,
+    "Longitude": 32.70939981,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aden Boğazköy",
+    "Latitude": 41.161410001,
+    "Longitude": 28.776240001,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Adıgüzel Akaryakıt",
+    "Latitude": 40.87370151,
+    "Longitude": 39.68437236,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Akgün Avm",
+    "Latitude": 38.6737585,
+    "Longitude": 39.17633829019263,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aksa Çoruh Rı̇ze",
+    "Latitude": 41.0282436,
+    "Longitude": 40.5543552,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aksa Çoruh Trabzon",
+    "Latitude": 40.991280001,
+    "Longitude": 39.7967340001,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aksa Doğalgaz Balıkesı̇r",
+    "Latitude": 39.65651982,
+    "Longitude": 27.90867584,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aksa Doğalgaz Bursa",
+    "Latitude": 40.23266695,
+    "Longitude": 28.98300831,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aksa Doğalgaz Kayserı̇",
+    "Latitude": 38.74454530930967,
+    "Longitude": 35.48725234927938,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aksa Genel Müdürlük",
+    "Latitude": 41.0917776,
+    "Longitude": 29.0954199,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aksa Yesa Bı̇nası",
+    "Latitude": 41.09185608,
+    "Longitude": 29.09676637,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Alı̇ce Vı̇llage Sı̇tesı̇",
+    "Latitude": 41.0011675,
+    "Longitude": 29.2209508,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Ananas Hotel",
+    "Latitude": 36.5393561740647,
+    "Longitude": 32.028961699197055,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aspark Evlerı̇",
+    "Latitude": 40.92838451,
+    "Longitude": 29.29071796,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Automall Mall Cı̇ty Resı̇dence",
+    "Latitude": 41.06901503882245,
+    "Longitude": 28.8533910383564,
+    "AcConnectorCount": 5,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Avangarte Otel Bodrum",
+    "Latitude": 37.121039677836855,
+    "Longitude": 27.28077948877969,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Avrupa Konutları Atakent 4",
+    "Latitude": 41.01965,
+    "Longitude": 28.79219,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Avrupa Konutları Atakent 5",
+    "Latitude": 41.02017,
+    "Longitude": 28.79116,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Avrupa Konutları Tem",
+    "Latitude": 41.089134,
+    "Longitude": 28.903023,
+    "AcConnectorCount": 23,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Avrupa Konutları Tem 2",
+    "Latitude": 41.08776183003512,
+    "Longitude": 28.908948753238548,
+    "AcConnectorCount": 16,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Ayder Haşı̇moğlu Spa Otel",
+    "Latitude": 40.95440279799919,
+    "Longitude": 41.098139425634706,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aydınbey Famous Resort",
+    "Latitude": 36.83257632458913,
+    "Longitude": 31.159660813493876,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aydınbey Gold Dreams",
+    "Latitude": 36.59805455017551,
+    "Longitude": 31.810689044176875,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aydınbey Kıng's Palace & Spa",
+    "Latitude": 36.80753927594641,
+    "Longitude": 31.343570798152378,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aydınbey Queen's Palace & Spa",
+    "Latitude": 36.87348986606634,
+    "Longitude": 30.998517649719755,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Aydınbey Sıu Collectıon",
+    "Latitude": 36.704737479839274,
+    "Longitude": 30.568721893896623,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Babıllon Hotel & Spa & Restaurant",
+    "Latitude": 41.01315081132075,
+    "Longitude": 40.358405273551185,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Başakşehı̇r Metrokent",
+    "Latitude": 41.107095,
+    "Longitude": 28.803265,
+    "AcConnectorCount": 5,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Başakşehı̇r Metrokent 2",
+    "Latitude": 41.1071070001,
+    "Longitude": 28.8033670001,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Başakşehı̇r Vadı̇park Evlerı̇",
+    "Latitude": 41.09035983,
+    "Longitude": 28.8114385,
+    "AcConnectorCount": 14,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Beko Kavurma",
+    "Latitude": 38.45300463435437,
+    "Longitude": 38.848504558478055,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Bena Kahve",
+    "Latitude": 39.43986567,
+    "Longitude": 31.56545566,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Beykoz Ünı̇versı̇tesı̇",
+    "Latitude": 41.09235165347839,
+    "Longitude": 29.093675749240816,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Bı̇lı̇m Tower",
+    "Latitude": 41.0066598161078,
+    "Longitude": 29.15588951787246,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Bı̇lı̇m Tower 2",
+    "Latitude": 41.00665982,
+    "Longitude": 29.15588952,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Bı̇lı̇rı̇s Otel",
+    "Latitude": 41.01258596127992,
+    "Longitude": 39.61253111401288,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Bı̇zı̇m Çatı Sı̇tesı̇",
+    "Latitude": 41.075539527444775,
+    "Longitude": 28.66475697743823,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Bodrum Oasıs Avm",
+    "Latitude": 37.040480001,
+    "Longitude": 27.411070001,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Bolkan Center",
+    "Latitude": 41.065531309498425,
+    "Longitude": 28.98711335397311,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Bomontı̇ Resıdences By Rotana",
+    "Latitude": 41.059356,
+    "Longitude": 28.979946,
+    "AcConnectorCount": 9,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Chacha Balık",
+    "Latitude": 41.05501772735192,
+    "Longitude": 29.05204378001376,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Çağlayan Sı̇tesı̇",
+    "Latitude": 41.01157412983404,
+    "Longitude": 28.80764534880336,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Çamlıbahçe Evlerı̇",
+    "Latitude": 41.13420021826579,
+    "Longitude": 28.77204101345544,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Çamlıca Restaurant",
+    "Latitude": 38.00153100152079,
+    "Longitude": 37.99679994263301,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Çamlık Garden",
+    "Latitude": 40.91942535,
+    "Longitude": 29.28952745,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Çanakkale 18 Mart Ünı̇versı̇tesı̇",
+    "Latitude": 40.1134610001,
+    "Longitude": 26.4241410001,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Çay İşletmelerı̇ Genel Müdürlüğü",
+    "Latitude": 41.0251643,
+    "Longitude": 40.5316883,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Çaykur Çayla",
+    "Latitude": 41.0210360001,
+    "Longitude": 40.5116040001,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Çaykur Kemalpaşa",
+    "Latitude": 41.48926491833415,
+    "Longitude": 41.52960463435435,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Çengelköy Otoparkı",
+    "Latitude": 41.04980333956986,
+    "Longitude": 29.05504513558172,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 6,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Çobanoğlu Restoran",
+    "Latitude": 38.64614,
+    "Longitude": 39.724004,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Çoruh Edaş Trabzon",
+    "Latitude": 40.95124496,
+    "Longitude": 39.91042318,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Dap Royal",
+    "Latitude": 40.93626439980024,
+    "Longitude": 29.134587869314604,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Dı̇van Resı̇dence Halkalı",
+    "Latitude": 41.01730101,
+    "Longitude": 28.77133646,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Doğa Balık Restaurant",
+    "Latitude": 41.04632628131112,
+    "Longitude": 29.0494199197752,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Doğan Holdıng",
+    "Latitude": 41.02372818649315,
+    "Longitude": 29.049167993151105,
+    "AcConnectorCount": 13,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Doğan Medya Center",
+    "Latitude": 39.90957467357144,
+    "Longitude": 32.794039205598914,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Double Tree By Hı̇lton Elazığ",
+    "Latitude": 38.67436013,
+    "Longitude": 39.21791972,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Dönercı̇ Alı̇ Usta",
+    "Latitude": 40.92129641433318,
+    "Longitude": 29.15680763519884,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Dumankaya Konsept",
+    "Latitude": 41.040835272064704,
+    "Longitude": 28.770131643326124,
+    "AcConnectorCount": 7,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Eclı̇pse Maslak",
+    "Latitude": 41.11759484048757,
+    "Longitude": 29.014244080957848,
+    "AcConnectorCount": 5,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Elazığ Valı̇lı̇ğı̇",
+    "Latitude": 38.675259,
+    "Longitude": 39.211336,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Elazığ Wındyhıll Hotel",
+    "Latitude": 38.7008440001,
+    "Longitude": 39.2155510001,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Elıte Cıty",
+    "Latitude": 41.045208105939594,
+    "Longitude": 28.783052358052387,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Elıte Cıty 2",
+    "Latitude": 41.04565356,
+    "Longitude": 28.78456509,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Elı̇tı̇st Park Konutları",
+    "Latitude": 41.04143051630241,
+    "Longitude": 28.784550147216137,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Elysıum Lıfe Evlerı̇",
+    "Latitude": 38.6712312801282,
+    "Longitude": 39.1876458237348,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Elysıum Park Avm",
+    "Latitude": 38.67085601332618,
+    "Longitude": 39.186632498150274,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Erkul Lı̇fe Sı̇tesı̇",
+    "Latitude": 41.00797181,
+    "Longitude": 28.84425001,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Esencı̇ty Evlerı̇",
+    "Latitude": 40.17236106543489,
+    "Longitude": 26.428392848400055,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Eston Çamlıevler 75",
+    "Latitude": 40.97690246,
+    "Longitude": 29.105722,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Evı̇npark Ada",
+    "Latitude": 40.93676573020284,
+    "Longitude": 29.13337881764022,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Evı̇npark Tepe",
+    "Latitude": 40.93678573020284,
+    "Longitude": 29.13339881764022,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Evı̇npark Tepe 2",
+    "Latitude": 40.93698430014997,
+    "Longitude": 29.13345782859832,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Fırat Edaş Elazığ",
+    "Latitude": 38.66407979,
+    "Longitude": 39.1703096,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Fı̇ Yaka Esenşehı̇r",
+    "Latitude": 41.03847869,
+    "Longitude": 28.66392538,
+    "AcConnectorCount": 6,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Fı̇kı̇rtepe Torkam",
+    "Latitude": 40.99183580517162,
+    "Longitude": 29.062272144181172,
+    "AcConnectorCount": 6,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Florya Ekşı̇nar Konakları",
+    "Latitude": 40.98447,
+    "Longitude": 28.7862,
+    "AcConnectorCount": 5,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Gate 41 Avm",
+    "Latitude": 40.7034770079497,
+    "Longitude": 30.14165863568673,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Gayası̇s Otel",
+    "Latitude": 41.04330795307564,
+    "Longitude": 39.07409611221593,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Gazı̇paşa Aırport Avm",
+    "Latitude": 36.28758092572938,
+    "Longitude": 32.294354539088765,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Genç Mı̇llet Bahçesı̇",
+    "Latitude": 38.7520413,
+    "Longitude": 40.5341587,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Genç Yazıcı Hotel Uludağ",
+    "Latitude": 40.10305569305919,
+    "Longitude": 29.13282534660499,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Gı̇resun Sabah Center Avm",
+    "Latitude": 40.908460001,
+    "Longitude": 38.370490001,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Göl Konutları",
+    "Latitude": 41.023111530528666,
+    "Longitude": 28.77112409757527,
+    "AcConnectorCount": 6,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Hılton Garden Inn Balıkesı̇r",
+    "Latitude": 39.64467307733385,
+    "Longitude": 27.879667957480024,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "İkebana Evlerı̇",
+    "Latitude": 41.01778071319571,
+    "Longitude": 28.825942597435223,
+    "AcConnectorCount": 6,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "İlksan Ankara Konukevı̇",
+    "Latitude": 39.92719186911801,
+    "Longitude": 32.870097565350605,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "İmç Çarşısı",
+    "Latitude": 41.01862174,
+    "Longitude": 28.95869711,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 6,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "İnsapark Evlerı̇ Sı̇tesı̇",
+    "Latitude": 41.02055948,
+    "Longitude": 28.83139565,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "İstanbul Evlerı̇ Boğazı̇çı̇ Konutları",
+    "Latitude": 38.33487427,
+    "Longitude": 38.27207097,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kaçkar Resort Hotel",
+    "Latitude": 40.954772972281155,
+    "Longitude": 41.093686947113056,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kale Art Bahçelı̇evler",
+    "Latitude": 41.01063049680192,
+    "Longitude": 28.845739439965808,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kastel Dragos",
+    "Latitude": 40.911081,
+    "Longitude": 29.137755,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kayaşehı̇r 19. Bölge",
+    "Latitude": 41.12770586146236,
+    "Longitude": 28.780967404198385,
+    "AcConnectorCount": 6,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kayaşehı̇r İş Ve Yaşam Merkezı̇",
+    "Latitude": 41.10883529992784,
+    "Longitude": 28.75747813745397,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 6,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kazancı Holdı̇ng Ankara",
+    "Latitude": 39.891111098534786,
+    "Longitude": 32.825002405985174,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 1,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kehrı̇bar Sı̇tesı̇",
+    "Latitude": 41.10390744553934,
+    "Longitude": 28.769171064418284,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kent Meydanı Avm",
+    "Latitude": 40.196730001,
+    "Longitude": 29.060230001,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kı̇ptaş Arnavutköy Konutları",
+    "Latitude": 41.18521714903101,
+    "Longitude": 28.72433888949546,
+    "AcConnectorCount": 6,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kı̇ptaş Sı̇lı̇vrı̇ 2. Etap",
+    "Latitude": 41.09311105179749,
+    "Longitude": 28.260216921776045,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kı̇ptaş Vadı̇tepe Bahçeşehı̇r",
+    "Latitude": 41.0744100163183,
+    "Longitude": 28.6947129046397,
+    "AcConnectorCount": 9,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Kocaelı̇ Dı̇lovası Osb",
+    "Latitude": 40.77763410793797,
+    "Longitude": 29.539415857279472,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Körfez Park Ankara Yönü",
+    "Latitude": 40.76908743,
+    "Longitude": 29.79786438,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Körfez Park İstanbul Yönü",
+    "Latitude": 40.77071711,
+    "Longitude": 29.79928887,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Krı̇stal Şehı̇r",
+    "Latitude": 41.02263,
+    "Longitude": 28.63544,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Levent Elexı̇a",
+    "Latitude": 41.07973989,
+    "Longitude": 29.0056279,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Lı̇ka Park",
+    "Latitude": 40.970310677940475,
+    "Longitude": 39.829458211105425,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Lı̇lyum Towers",
+    "Latitude": 40.89732647016554,
+    "Longitude": 29.18151681349493,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Loca Mahal",
+    "Latitude": 40.99076784682146,
+    "Longitude": 28.89417357301189,
+    "AcConnectorCount": 6,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Magnolı̇a Shop Kavacık",
+    "Latitude": 41.09175766594481,
+    "Longitude": 29.0957924273539,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Malkara Erdı̇nç Denı̇z Akaryakıt",
+    "Latitude": 40.88385913,
+    "Longitude": 26.92213538,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Manas Evlerı̇ Selçuklular Sı̇tesı̇",
+    "Latitude": 38.32797395,
+    "Longitude": 38.2800172,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Marıncıty Trabzon",
+    "Latitude": 40.961256694388595,
+    "Longitude": 39.85076339115284,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Marmara Kule",
+    "Latitude": 40.910600196468216,
+    "Longitude": 29.197355220672847,
+    "AcConnectorCount": 6,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Marmara Kule 2",
+    "Latitude": 40.9106002,
+    "Longitude": 29.19735522,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Mercedes-benz Yı̇ğı̇tler",
+    "Latitude": 38.35563437524479,
+    "Longitude": 38.190661146245944,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Mercure Trabzon Otel",
+    "Latitude": 40.98228197,
+    "Longitude": 39.82867872,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Mesa Nurol Zambaklıbahçe",
+    "Latitude": 41.076592954885875,
+    "Longitude": 28.69133019538207,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Metro 34 Plaza",
+    "Latitude": 41.07008388,
+    "Longitude": 28.80461321,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Mılıamall Avm",
+    "Latitude": 38.8865452,
+    "Longitude": 40.4956608,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Mı̇moza 1 Sı̇tesı̇",
+    "Latitude": 40.993038,
+    "Longitude": 29.134394,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Mı̇moza Evlerı̇",
+    "Latitude": 40.98844047,
+    "Longitude": 39.72500168,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Mı̇rada Del Mar Hotel",
+    "Latitude": 36.67383535,
+    "Longitude": 30.56575344,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Mı̇rada Exclusıve Bodrum",
+    "Latitude": 37.02497815474032,
+    "Longitude": 27.392799485313592,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Mudurnu Tokı̇ 4. Etap",
+    "Latitude": 40.47850969,
+    "Longitude": 31.20710128,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nef 2 Halı̇ç",
+    "Latitude": 41.04031975577893,
+    "Longitude": 28.92067782698493,
+    "AcConnectorCount": 6,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nef 36 Basınekspres",
+    "Latitude": 41.045730834712025,
+    "Longitude": 28.812722453031014,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nef Ataköy 22",
+    "Latitude": 40.9916562095596,
+    "Longitude": 28.8353036879244,
+    "AcConnectorCount": 13,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nef Ataköy 22 Çarşı",
+    "Latitude": 40.99166049,
+    "Longitude": 28.8352250001,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nef Bahçelı̇evler",
+    "Latitude": 41.010172,
+    "Longitude": 28.878888,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nef Çekmeköy Çamlıtepe",
+    "Latitude": 41.032844,
+    "Longitude": 29.26664,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nef Çekmeköy Ormantepe",
+    "Latitude": 41.033744,
+    "Longitude": 29.26694,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nef Inıstanbul Topkapı",
+    "Latitude": 41.0235130271483,
+    "Longitude": 28.9012982053368,
+    "AcConnectorCount": 8,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nef Reserve Gölköy",
+    "Latitude": 37.09048,
+    "Longitude": 27.42178,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nef Reserve Yalıkavak",
+    "Latitude": 37.142294,
+    "Longitude": 27.323393,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nest Dragos",
+    "Latitude": 40.91512,
+    "Longitude": 29.1557,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Nurol Tarabya Sı̇tesı̇",
+    "Latitude": 41.14022667,
+    "Longitude": 29.03900133,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "O178 Oksı̇jen Susurluk - İstanbul Yönü",
+    "Latitude": 39.92221510318326,
+    "Longitude": 28.132456560265915,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "O178 Oksı̇jen Susurluk - İzmı̇r Yönü",
+    "Latitude": 39.923990425249535,
+    "Longitude": 28.132501482110293,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "O3 Oksı̇jen Dı̇lovası",
+    "Latitude": 40.773627819046794,
+    "Longitude": 29.51944336864866,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 8,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "O68 Oksı̇jen Gemlı̇k - İstanbul Yönü",
+    "Latitude": 40.3891787204544,
+    "Longitude": 29.14193455450405,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "O68 Oksı̇jen Gemlı̇k - İzmı̇r Yönü",
+    "Latitude": 40.38983675071166,
+    "Longitude": 29.13985698263638,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Odı̇n Otel",
+    "Latitude": 36.36598023835419,
+    "Longitude": 35.84590196914987,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Optımum Gardens 2",
+    "Latitude": 40.92082,
+    "Longitude": 29.304292,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Optı̇mum Gardens",
+    "Latitude": 40.920820001,
+    "Longitude": 29.3042920001,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Orı̇on Avm",
+    "Latitude": 41.15026897264599,
+    "Longitude": 27.833940538209657,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Paradıse Cıty Çekmeköy",
+    "Latitude": 41.02306191439567,
+    "Longitude": 29.18455925824915,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Park 17 Doğa Sı̇tesı̇",
+    "Latitude": 40.09433872963301,
+    "Longitude": 26.409266231286175,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Peerles Vı̇llas Hotel",
+    "Latitude": 41.002088537202845,
+    "Longitude": 39.63471280289766,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Pelıcan Hıll",
+    "Latitude": 41.06834864767457,
+    "Longitude": 28.619203776571947,
+    "AcConnectorCount": 6,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Polat Koru",
+    "Latitude": 41.138819,
+    "Longitude": 29.03477,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Ramada By Wyndham Elazığ",
+    "Latitude": 38.6695007645902,
+    "Longitude": 39.1870353777783,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Ramada By Wyndham Gı̇resun Pı̇razı̇z",
+    "Latitude": 40.9503181,
+    "Longitude": 38.1484532,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Renault Elı̇f",
+    "Latitude": 41.324899397545074,
+    "Longitude": 33.775053608798125,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Renault Elı̇f 2",
+    "Latitude": 41.3248994,
+    "Longitude": 33.77505361,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Rı̇ze Osb",
+    "Latitude": 40.9145810001,
+    "Longitude": 40.4187750001,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Rı̇ze Şı̇mal Avm",
+    "Latitude": 41.0238154420765,
+    "Longitude": 40.5328279799657,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Rı̇ze Tı̇caret Ve Sanayı̇ Odası",
+    "Latitude": 41.0244128,
+    "Longitude": 40.5246429,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Rte Ünı̇. Ardeşen Yerleşkesı̇",
+    "Latitude": 41.1917960001,
+    "Longitude": 40.9832120001,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Rte Ünı̇. Zı̇hnı̇ Derı̇n Yerleşkesı̇",
+    "Latitude": 41.0382450001,
+    "Longitude": 40.4932260001,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Sağlıkkent Sı̇tesı̇",
+    "Latitude": 41.02447420499889,
+    "Longitude": 28.64235630659848,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Seyrı̇ Adalar Sı̇tesı̇",
+    "Latitude": 40.91968741183388,
+    "Longitude": 29.142786360470247,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Sı̇npaş Köyceğı̇z",
+    "Latitude": 40.99791489971044,
+    "Longitude": 29.22673750859705,
+    "AcConnectorCount": 5,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Skypark 1",
+    "Latitude": 41.21321143750347,
+    "Longitude": 28.72759569814635,
+    "AcConnectorCount": 8,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Skypark 2",
+    "Latitude": 41.21316301204769,
+    "Longitude": 28.727702986508703,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Soyak Soho",
+    "Latitude": 41.0680035547422,
+    "Longitude": 29.0124271347329,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Sultan Çöp Şı̇ş",
+    "Latitude": 37.83309718,
+    "Longitude": 27.51567757,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Şanlıurfa Bı̇lı̇m Merkezı̇",
+    "Latitude": 37.17165077901248,
+    "Longitude": 38.843390917189126,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Şanlıurfa Büyükşehı̇r Beledı̇yesı̇",
+    "Latitude": 37.161932114448355,
+    "Longitude": 38.795697233314826,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Şanlıurfa Fuar Merkezı̇",
+    "Latitude": 37.2248408979056,
+    "Longitude": 38.792125331970134,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Şanlıurfa Gap Su-kay Park",
+    "Latitude": 37.16962226461389,
+    "Longitude": 38.84832797984226,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Şanlıurfa Şanbel Enerjı̇",
+    "Latitude": 37.1730001661216,
+    "Longitude": 38.805971658708096,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Şanlıurfa Tenı̇s Dünyası",
+    "Latitude": 37.20099475577734,
+    "Longitude": 38.77572315912403,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Şelale Evlerı̇",
+    "Latitude": 41.08258224391113,
+    "Longitude": 28.968894562237924,
+    "AcConnectorCount": 5,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Tepekent Vı̇llaları",
+    "Latitude": 41.050667834299496,
+    "Longitude": 28.502817899145597,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Termı̇nal Pı̇de Uçak Kafe Restoran",
+    "Latitude": 40.95808720041117,
+    "Longitude": 39.85587152491992,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "The Grand Blue Sky Hotel",
+    "Latitude": 37.83964153,
+    "Longitude": 27.23954675,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Tı̇lya Resort Hotel",
+    "Latitude": 41.05079195,
+    "Longitude": 39.53766585,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Torul Cam Teras",
+    "Latitude": 40.55662855460016,
+    "Longitude": 39.29839100317296,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Toya Next",
+    "Latitude": 41.04457367969984,
+    "Longitude": 28.811027991052867,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Trump Towers",
+    "Latitude": 41.0677267,
+    "Longitude": 28.99217,
+    "AcConnectorCount": 6,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Trump Towers Avm",
+    "Latitude": 41.0677267,
+    "Longitude": 28.992170001,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Türsan Park Ankara Yönü",
+    "Latitude": 40.78996291,
+    "Longitude": 31.23938754,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Türsan Park İstanbul Yönü",
+    "Latitude": 40.79104321,
+    "Longitude": 31.24205898,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Twınstar Yakacık",
+    "Latitude": 40.91181176623706,
+    "Longitude": 29.231605843390184,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Uskumru Restaurant",
+    "Latitude": 41.09105546268248,
+    "Longitude": 29.066435820489144,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Vadı̇tepe Bahçeşehı̇r 4",
+    "Latitude": 41.0797430151505,
+    "Longitude": 28.691300204889263,
+    "AcConnectorCount": 12,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Varyap Merıdıan",
+    "Latitude": 40.9997138065047,
+    "Longitude": 29.101577364851405,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Varyap Merıdıan 2",
+    "Latitude": 40.99971381,
+    "Longitude": 29.10157736,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 4,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Vı̇lla Park Sera Gölü Restoran",
+    "Latitude": 40.97512977,
+    "Longitude": 39.60500436,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Vonresort Abant Hotel & Spa",
+    "Latitude": 40.70697659540888,
+    "Longitude": 31.457023618379583,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "World Deluxe Forest Sapanca",
+    "Latitude": 40.687598991011335,
+    "Longitude": 30.306691518660365,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "World Deluxe Sapanca",
+    "Latitude": 40.67887101004893,
+    "Longitude": 30.293675975029572,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Yado Dı̇nlenme Tesı̇slerı̇",
+    "Latitude": 38.9162994,
+    "Longitude": 40.4135122,
+    "AcConnectorCount": 1,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Yakamoz Restaurant",
+    "Latitude": 41.0270728,
+    "Longitude": 40.5239031,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Yedı̇tepe Bahçeşehı̇r Towerland",
+    "Latitude": 38.32591615,
+    "Longitude": 38.28179218,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Yedı̇tepe Newyork",
+    "Latitude": 38.30995011,
+    "Longitude": 38.27723477,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Yedpa Tı̇caret Merkezı̇",
+    "Latitude": 40.98529059292503,
+    "Longitude": 29.16297002326444,
+    "AcConnectorCount": 2,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Yenı̇tepe İzmı̇r 1.etap",
+    "Latitude": 38.35919102866215,
+    "Longitude": 27.119164290272288,
+    "AcConnectorCount": 4,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Yenı̇tepe İzmı̇r 2.etap",
+    "Latitude": 38.36063569892699,
+    "Longitude": 27.12036171982643,
+    "AcConnectorCount": 3,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Yeşı̇l Yamaç Sı̇tesı̇",
+    "Latitude": 41.04563072582709,
+    "Longitude": 29.086498952220197,
+    "AcConnectorCount": 5,
+    "DcConnectorCount": 0,
+    "MaxElectricPower": 0
+  },
+  {
+    "Name": "Zeytı̇n Cafe",
+    "Latitude": 41.1613190001,
+    "Longitude": 28.45424317,
+    "AcConnectorCount": 0,
+    "DcConnectorCount": 2,
+    "MaxElectricPower": 0
+  }
+]

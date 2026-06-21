@@ -8,7 +8,8 @@ lsof -ti :5261 | xargs kill -9 2>/dev/null
 sleep 1
 
 if [ "$1" == "--reset-db" ]; then
-  rm -f ElektrikliRota.WebApi/elektriklirota.db
+  rm -f ../ElektrikliRota.Infrastructure/Data/sarjrota.db
+  rm -f ElektrikliRota.Infrastructure/Data/sarjrota.db
   echo "✓ Veritabanı silindi — yeniden oluşturulacak"
 fi
 

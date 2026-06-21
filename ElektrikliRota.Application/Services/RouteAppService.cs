@@ -24,6 +24,6 @@ public class RouteAppService
         var startLocation = new Location { Latitude = request.Start.Lat, Longitude = request.Start.Lng };
         var endLocation = new Location { Latitude = request.End.Lat, Longitude = request.End.Lng };
 
-        return await _routeService.CalculateRouteAsync(startLocation, endLocation, vehicle, request.PreferredBrands, request.ConnectorTypes, request.InitialChargePercentage);
+        return await _routeService.CalculateRouteAsync(startLocation, endLocation, vehicle, request.PreferredBrands, request.ConnectorTypes, request.InitialChargePercentage, request.AdditionalConsumptionPercent);
     }
 }

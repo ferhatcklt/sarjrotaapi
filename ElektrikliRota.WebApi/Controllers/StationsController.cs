@@ -1,4 +1,5 @@
 using ElektrikliRota.Application.Services;
+using ElektrikliRota.Core.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ElektrikliRota.WebApi.Controllers;
@@ -32,5 +33,19 @@ public class StationsController : ControllerBase
             .OrderBy(b => b)
             .ToList();
         return Ok(brands);
+    }
+
+    [HttpGet("prices")]
+    public IActionResult GetPrices()
+    {
+        return Ok(PricingConstants.Prices);
+    }
+
+    [HttpGet("brands/{brandSlug}/statistics")]
+    public async Task<IActionResult> GetBrandStatistics(string brandSlug)
+    {
+        var stats = await _stationAppService.GetBrandStatisticsAsync(brandSlug);
+        if (stats == null) return NotFound("Brand not found");
+        return Ok(stats);
     }
 }

@@ -1,0 +1,457 @@
+[
+  {
+    "name": "A City AVM",
+    "lat": 39.9463223,
+    "lng": 32.7621364,
+    "ac": 0,
+    "dc": 1
+  },
+  {
+    "name": "A Life Hospital / Etimesgut",
+    "lat": 39.9539722,
+    "lng": 32.6279167,
+    "ac": 4,
+    "dc": 1
+  },
+  {
+    "name": "Ak-Han İş Merkezi",
+    "lat": 39.9286353,
+    "lng": 32.8472155,
+    "ac": 1,
+    "dc": 0
+  },
+  {
+    "name": "Altınköy Açık Hava Müzesi",
+    "lat": 39.9728889,
+    "lng": 32.9546944,
+    "ac": 2,
+    "dc": 0
+  },
+  {
+    "name": "Altınköy At Manej Alanı",
+    "lat": 39.9762222,
+    "lng": 32.9617778,
+    "ac": 2,
+    "dc": 0
+  },
+  {
+    "name": "Anatolium AVM",
+    "lat": 39.8862778,
+    "lng": 32.9332222,
+    "ac": 6,
+    "dc": 2
+  },
+  {
+    "name": "Ankara Kule Evo Önü",
+    "lat": 39.8741236,
+    "lng": 32.6496453,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "Ankara Nişantaşı Pazarı",
+    "lat": 39.8774503,
+    "lng": 32.8634236,
+    "ac": 3,
+    "dc": 1
+  },
+  {
+    "name": "Armada AVM",
+    "lat": 39.912828,
+    "lng": 32.809639,
+    "ac": 0,
+    "dc": 5
+  },
+  {
+    "name": "Aski Önü Otopark",
+    "lat": 39.9455507,
+    "lng": 32.8499302,
+    "ac": 2,
+    "dc": 1
+  },
+  {
+    "name": "ASO 1. OSB Başkanlığı Marifet Cami Otoparkı",
+    "lat": 39.9538237,
+    "lng": 32.526957,
+    "ac": 1,
+    "dc": 0
+  },
+  {
+    "name": "ASO-SEM Sürekli Eğitim Merkezi",
+    "lat": 39.9725269,
+    "lng": 32.5572078,
+    "ac": 1,
+    "dc": 0
+  },
+  {
+    "name": "ASO Teknik Koleji",
+    "lat": 39.9814345,
+    "lng": 32.5542646,
+    "ac": 1,
+    "dc": 0
+  },
+  {
+    "name": "AŞTİ",
+    "lat": 39.918296,
+    "lng": 32.8122129,
+    "ac": 2,
+    "dc": 0
+  },
+  {
+    "name": "Ata Hyundai Plaza",
+    "lat": 39.8994683,
+    "lng": 32.8131304,
+    "ac": 0,
+    "dc": 1
+  },
+  {
+    "name": "Atlantis Alışveriş Merkezi Açık Otopark",
+    "lat": 39.9717653,
+    "lng": 32.7153214,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "Aşkabat Caddesi",
+    "lat": 39.9201046,
+    "lng": 32.827074,
+    "ac": 4,
+    "dc": 1
+  },
+  {
+    "name": "Başkent Millet Bahçesi",
+    "lat": 39.9407778,
+    "lng": 32.8381944,
+    "ac": 3,
+    "dc": 0
+  },
+  {
+    "name": "Besa Nova Plaza",
+    "lat": 39.86144,
+    "lng": 32.64365,
+    "ac": 0,
+    "dc": 1
+  },
+  {
+    "name": "Bizim Konak Parlamenterler Sitesi",
+    "lat": 39.8878575,
+    "lng": 32.8795312,
+    "ac": 4,
+    "dc": 0
+  },
+  {
+    "name": "Bulvar Beytepe",
+    "lat": 39.8521935,
+    "lng": 32.7102502,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "Çayyolu Çağdaş Market Önü",
+    "lat": 39.8701944,
+    "lng": 32.6865278,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "CEPA AVM",
+    "lat": 39.9095288,
+    "lng": 32.77826,
+    "ac": 2,
+    "dc": 3
+  },
+  {
+    "name": "Çubuk Benzinlik",
+    "lat": 40.2389444,
+    "lng": 33.02675,
+    "ac": 1,
+    "dc": 0
+  },
+  {
+    "name": "DASİ Motorlu Araçlar",
+    "lat": 39.9794722,
+    "lng": 32.6862222,
+    "ac": 2,
+    "dc": 0
+  },
+  {
+    "name": "Eryaman Neopolitan Konutları",
+    "lat": 39.9913286,
+    "lng": 32.6207165,
+    "ac": 1,
+    "dc": 0
+  },
+  {
+    "name": "Gimsa Park Eryaman",
+    "lat": 39.9645842,
+    "lng": 32.6522595,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "GMG Garaj Beytepe",
+    "lat": 39.8608056,
+    "lng": 32.7132778,
+    "ac": 1,
+    "dc": 0
+  },
+  {
+    "name": "Göksu Park ANFA Otopark",
+    "lat": 39.9899053,
+    "lng": 32.6446873,
+    "ac": 4,
+    "dc": 0
+  },
+  {
+    "name": "Göksu Park Kafeler Bölgesi",
+    "lat": 39.9920018,
+    "lng": 32.6456223,
+    "ac": 2,
+    "dc": 0
+  },
+  {
+    "name": "Göksu Parkı Giriş Otopark",
+    "lat": 39.9884709,
+    "lng": 32.6479038,
+    "ac": 2,
+    "dc": 0
+  },
+  {
+    "name": "Gölbaşı Sahil Caddesi Colombia Coffee Önü",
+    "lat": 39.7862892,
+    "lng": 32.8042984,
+    "ac": 0,
+    "dc": 1
+  },
+  {
+    "name": "IKEA Alışveriş Merkezi",
+    "lat": 39.8878056,
+    "lng": 32.9330278,
+    "ac": 2,
+    "dc": 0
+  },
+  {
+    "name": "İncek Vista",
+    "lat": 39.8303871,
+    "lng": 32.7340927,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "Gerçek İstanbul Sosyete Pazarı",
+    "lat": 39.9059167,
+    "lng": 32.7016944,
+    "ac": 0,
+    "dc": 1
+  },
+  {
+    "name": "Kentpark AVM",
+    "lat": 39.9087143,
+    "lng": 32.7764453,
+    "ac": 0,
+    "dc": 5
+  },
+  {
+    "name": "Kocatepe Cami Kapalı Otopark",
+    "lat": 39.9160294,
+    "lng": 32.8585627,
+    "ac": 6,
+    "dc": 0
+  },
+  {
+    "name": "Konya Yolu (Mevlana Bulvarı)",
+    "lat": 39.8805375,
+    "lng": 32.8121766,
+    "ac": 2,
+    "dc": 2
+  },
+  {
+    "name": "Koşal İş Merkezi",
+    "lat": 40.0860344,
+    "lng": 32.6178149,
+    "ac": 0,
+    "dc": 1
+  },
+  {
+    "name": "Lodumlu Park Liva Karşısı",
+    "lat": 39.8727552,
+    "lng": 32.7018761,
+    "ac": 4,
+    "dc": 0
+  },
+  {
+    "name": "Lodumlu Park Coffee De Madrid Önü",
+    "lat": 39.8751944,
+    "lng": 32.7010833,
+    "ac": 2,
+    "dc": 1
+  },
+  {
+    "name": "Mahall Ankara",
+    "lat": 39.9076843,
+    "lng": 32.7536278,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "Merkez Ankara (Öğrenci Yurdu Yanı)",
+    "lat": 39.9416557,
+    "lng": 32.8358895,
+    "ac": 3,
+    "dc": 0
+  },
+  {
+    "name": "Merkez Ankara L Blok Önü Açık Otopark",
+    "lat": 39.943717956543,
+    "lng": 32.8337669372559,
+    "ac": 0,
+    "dc": 1
+  },
+  {
+    "name": "Merkez Ankara M Blok Önü Açık Otopark",
+    "lat": 39.9425958,
+    "lng": 32.8349974,
+    "ac": 0,
+    "dc": 1
+  },
+  {
+    "name": "Metromall AVM",
+    "lat": 39.983115,
+    "lng": 32.6108302,
+    "ac": 0,
+    "dc": 3
+  },
+  {
+    "name": "Mogan Park Anfa Önü",
+    "lat": 39.774721,
+    "lng": 32.7863545,
+    "ac": 2,
+    "dc": 0
+  },
+  {
+    "name": "Mogan Park Kafeler Bölgesi",
+    "lat": 39.7776517,
+    "lng": 32.7883804,
+    "ac": 2,
+    "dc": 0
+  },
+  {
+    "name": "Necatibey Caddesi",
+    "lat": 39.9244284,
+    "lng": 32.8508233,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "Neva Kurumsal",
+    "lat": 39.8786682,
+    "lng": 32.8798595,
+    "ac": 1,
+    "dc": 0
+  },
+  {
+    "name": "Neva Şarj Genel Merkez",
+    "lat": 39.8938889,
+    "lng": 32.6945278,
+    "ac": 1,
+    "dc": 1
+  },
+  {
+    "name": "Next Level AVM",
+    "lat": 39.9111389,
+    "lng": 32.8138611,
+    "ac": 1,
+    "dc": 1
+  },
+  {
+    "name": "Osmanlı İş Merkezi",
+    "lat": 39.973684,
+    "lng": 32.83015,
+    "ac": 2,
+    "dc": 1
+  },
+  {
+    "name": "Özel Bilgi Hastanesi",
+    "lat": 39.9504722,
+    "lng": 32.7157778,
+    "ac": 3,
+    "dc": 0
+  },
+  {
+    "name": "Panora AVM",
+    "lat": 39.848732,
+    "lng": 32.8325195,
+    "ac": 2,
+    "dc": 6
+  },
+  {
+    "name": "Park Fırın",
+    "lat": 39.8819203,
+    "lng": 32.6587763,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "Podium AVM",
+    "lat": 39.962315,
+    "lng": 32.7694091,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "Safa Camii Çukurambar",
+    "lat": 39.8955908,
+    "lng": 32.8094915,
+    "ac": 2,
+    "dc": 1
+  },
+  {
+    "name": "Şehit Orgeneral Eşref Bitlis Kışlası",
+    "lat": 39.944553,
+    "lng": 32.72065,
+    "ac": 4,
+    "dc": 1
+  },
+  {
+    "name": "Taurus AVM",
+    "lat": 39.8875833,
+    "lng": 32.81125,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "Tavacı Recep Usta Park Vadi",
+    "lat": 39.8846111,
+    "lng": 32.8459444,
+    "ac": 3,
+    "dc": 0
+  },
+  {
+    "name": "Tavacı Recep Usta Ümitköy",
+    "lat": 39.8719722,
+    "lng": 32.6893889,
+    "ac": 2,
+    "dc": 0
+  },
+  {
+    "name": "Tunalı Hilmi Caddesi",
+    "lat": 39.9026124,
+    "lng": 32.8605318,
+    "ac": 0,
+    "dc": 2
+  },
+  {
+    "name": "Ulucanlar Cezaevi Müzesi Önü",
+    "lat": 39.9368611,
+    "lng": 32.8729444,
+    "ac": 2,
+    "dc": 0
+  },
+  {
+    "name": "Velux Ankara",
+    "lat": 39.9467246,
+    "lng": 32.738029,
+    "ac": 0,
+    "dc": 3
+  }
+]

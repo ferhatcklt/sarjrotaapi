@@ -17,19 +17,6 @@ public class RouteService : IRouteService
     private const double ChargeThresholdFactor  = 0.10;  // Bu miktarı kalınca şarj et
     private const double NearbyCorridorKm       = 3.0;  // Rota koridoru genişliği (km)
 
-    private static readonly Dictionary<string, double> ChargePrices = new(StringComparer.OrdinalIgnoreCase)
-    {
-        { "ZES", 16.49 },
-        { "Eşarj", 13.50 },
-        { "Trugo", 14.98 },
-        { "Tesla", 12.30 },
-        { "Voltrun", 14.00 },
-        { "Sharz.net", 10.99 },
-        { "Astor", 14.00 },
-        { "Ovolt", 13.99 }
-    };
-    private const double DefaultChargePrice = 14.00;
-
     public RouteService(IStationRepository stationRepository, IHttpClientFactory httpClientFactory, IConfiguration configuration)
     {
         _stationRepository = stationRepository;
@@ -39,7 +26,7 @@ public class RouteService : IRouteService
 
     public async Task<RouteResult> CalculateRouteAsync(
         Location start, Location end, Vehicle vehicle,
-        List<string> preferredBrands, List<string> connectorTypes, int initialCharge)
+        List<string> preferredBrands, List<string> connectorTypes, int initialCharge, int additionalConsumptionPercent)
     {
         // 1. İlk OSRM çağrısı — alternatives=true, ham geometri
         var initialRoutes = await FetchOsrmRoutes(start, end, null);
@@ -74,7 +61,7 @@ public class RouteService : IRouteService
             var (initialPath, distKm, durSec) = initialRoutes[idx];
 
             // a) Şarj duraklarını bul + varış şarj yüzdesini hesapla
-            var (stops, arrivalCharge) = BuildChargeStops(initialPath, distKm, durSec, vehicle, filtered.ToList(), initialCharge);
+            var (stops, arrivalCharge) = BuildChargeStops(initialPath, distKm, durSec, vehicle, filtered.ToList(), initialCharge, additionalConsumptionPercent);
 
             if (stops == null)
             {
@@ -229,10 +216,10 @@ public class RouteService : IRouteService
 
             double addedKwh = (chargedPct / 100.0) * vehicle.BatteryCapacityKWh;
             
-            double pricePerKwh = DefaultChargePrice;
-            if (!string.IsNullOrEmpty(stop.Brand) && ChargePrices.TryGetValue(stop.Brand, out var brandPrice))
+            double pricePerKwh = PricingConstants.DefaultChargePrice;
+            if (!string.IsNullOrEmpty(stop.Brand) && PricingConstants.Prices.TryGetValue(stop.Brand, out var brandPrice))
             {
-                pricePerKwh = brandPrice;
+                pricePerKwh = brandPrice.DC; // Route over fast charge implies DC rate usually
             }
 
             totalCost += addedKwh * pricePerKwh;
@@ -245,7 +232,7 @@ public class RouteService : IRouteService
     // Mantık: Mevcut menzil eşiği aşıldığında, kalan menzil içinde rota
     // üzerindeki en yakın GERÇEK istasyonu seçer. Sanal öneri üretmez.
     public (List<Station>? Stops, int ArrivalChargePercentage) BuildChargeStops(
-        List<Location> path, double totalDistKm, double totalDurSec, Vehicle vehicle, List<Station> available, int initialCharge)
+        List<Location> path, double totalDistKm, double totalDurSec, Vehicle vehicle, List<Station> available, int initialCharge, int additionalConsumptionPercent)
     {
         // Dinamik Tüketim Çarpanı (Ortalama Hıza Göre)
         double avgSpeedKmH = totalDistKm / (totalDurSec / 3600.0);
@@ -256,7 +243,8 @@ public class RouteService : IRouteService
         else if (avgSpeedKmH < 50) consumptionMultiplier = 0.90; // %10 daha az tüketim
 
         // Çarpana göre gerçek menzili yeniden hesapla (Hızlı gidildiyse menzil düşer)
-        double realMax      = (vehicle.RangeKm * RealisticRangeFactor) / consumptionMultiplier;
+        double manualConsumptionFactor = 1.0 + (additionalConsumptionPercent / 100.0);
+        double realMax      = (vehicle.RangeKm * RealisticRangeFactor) / (consumptionMultiplier * manualConsumptionFactor);
         double threshold    = realMax * ChargeThresholdFactor;
         double currentRange = realMax * (initialCharge / 100.0);
         double covered      = 0;

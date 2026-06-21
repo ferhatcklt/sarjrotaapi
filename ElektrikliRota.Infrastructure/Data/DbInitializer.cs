@@ -45,6 +45,26 @@ public static class DbInitializer
             if (File.Exists(sharzJsonPath))
                 ParseSharzOvoltJson(sharzJsonPath, stations);
 
+            var nevaJsonPath = Path.Combine(dataPath, "neva.json");
+            if (File.Exists(nevaJsonPath))
+                ParseNevaJson(nevaJsonPath, stations);
+
+            var watJsPath = Path.Combine(dataPath, "wat.js");
+            if (File.Exists(watJsPath))
+                ParseWatJs(watJsPath, stations);
+
+            var enyakitJsonPath = Path.Combine(dataPath, "enyakit.json");
+            if (File.Exists(enyakitJsonPath))
+                ParseEnyakitJson(enyakitJsonPath, stations);
+
+            var aksaJsonPath = Path.Combine(dataPath, "aksa.json");
+            if (File.Exists(aksaJsonPath))
+                ParseAksaJson(aksaJsonPath, stations);
+
+            var rstJsonPath = Path.Combine(dataPath, "rst.json");
+            if (File.Exists(rstJsonPath))
+                ParseRstJson(rstJsonPath, stations);
+
             if (stations.Count > 0)
             {
                 context.Stations.AddRange(stations);
@@ -53,116 +73,116 @@ public static class DbInitializer
         }
     }
 
-    private static Vehicle V(string id, string brand, string model, int range, double battery) =>
-        new Vehicle { Id = Guid.Parse(id), Brand = brand, Model = model, RangeKm = range, BatteryCapacityKWh = battery, AverageConsumptionKWhPer100Km = Math.Round((battery / range) * 100, 2) };
+    private static Vehicle V(string id, string brand, string model, int range, double battery, double consumption) =>
+        new Vehicle { Id = Guid.Parse(id), Brand = brand, Model = model, RangeKm = range, BatteryCapacityKWh = battery, AverageConsumptionKWhPer100Km = consumption };
 
     private static void SeedVehicles(AppDbContext context)
     {
         var v = new List<Vehicle>
         {
-            V("a0000001-0000-0000-0000-000000000001","Togg","T10X (88.5 kWh)",523,88.5),
-            V("a0000002-0000-0000-0000-000000000001","Togg","T10F V1 Uzun Menzil (88.5 kWh)",623,88.5),
-            V("a0000103-0000-0000-0000-000000000001","Togg","T10F V2 AWD (88.5 kWh)",523,88.5),
-            V("a0000003-0000-0000-0000-000000000001","Tesla","Model Y Standard Range",455,57.5),
-            V("a0000004-0000-0000-0000-000000000001","Tesla","Model Y Long Range",533,75.0),
-            V("a0000005-0000-0000-0000-000000000001","Tesla","Model 3 Standard Range",513,57.5),
-            V("a0000006-0000-0000-0000-000000000001","Tesla","Model 3 Long Range",629,82.0),
-            V("a0000007-0000-0000-0000-000000000001","Tesla","Model X",576,100.0),
-            V("a0000008-0000-0000-0000-000000000001","Tesla","Model S Long Range",652,100.0),
-            V("a0000009-0000-0000-0000-000000000001","Hyundai","Ioniq 5 Standard (58 kWh)",385,58.0),
-            V("a0000010-0000-0000-0000-000000000001","Hyundai","Ioniq 5 Long Range (77 kWh)",481,72.6),
-            V("a0000011-0000-0000-0000-000000000001","Hyundai","Ioniq 6 Long Range",614,77.4),
-            V("a0000012-0000-0000-0000-000000000001","Hyundai","Kona Electric (65.4 kWh)",514,65.4),
-            V("a0000013-0000-0000-0000-000000000001","Kia","EV6 Standard Range",394,58.0),
-            V("a0000014-0000-0000-0000-000000000001","Kia","EV6 Long Range",528,77.4),
-            V("a0000015-0000-0000-0000-000000000001","Kia","EV9 Long Range",563,99.8),
-            V("a0000016-0000-0000-0000-000000000001","Kia","Niro EV",463,64.8),
-            V("a0000017-0000-0000-0000-000000000001","BMW","i3 (42.2 kWh)",285,42.2),
-            V("a0000018-0000-0000-0000-000000000001","BMW","i4 eDrive40",590,83.9),
-            V("a0000019-0000-0000-0000-000000000001","BMW","i4 M50",510,83.9),
-            V("a0000020-0000-0000-0000-000000000001","BMW","iX3",461,80.0),
-            V("a0000021-0000-0000-0000-000000000001","BMW","iX xDrive40",425,76.6),
-            V("a0000022-0000-0000-0000-000000000001","BMW","iX xDrive50",630,111.5),
-            V("a0000023-0000-0000-0000-000000000001","MINI","Cooper SE Electric",234,32.6),
-            V("a0000024-0000-0000-0000-000000000001","MINI","Cooper Electric (54 kWh)",402,54.2),
-            V("a0000025-0000-0000-0000-000000000001","MINI","Aceman E (40.7 kWh)",310,40.7),
-            V("a0000026-0000-0000-0000-000000000001","MINI","Aceman SE (54.2 kWh)",406,54.2),
-            V("a0000027-0000-0000-0000-000000000001","MINI","Countryman E",462,66.5),
-            V("a0000028-0000-0000-0000-000000000001","MINI","Countryman SE ALL4",433,66.5),
-            V("a0000029-0000-0000-0000-000000000001","Mercedes","EQA 250+",426,70.5),
-            V("a0000030-0000-0000-0000-000000000001","Mercedes","EQB 350 4MATIC",419,66.5),
-            V("a0000031-0000-0000-0000-000000000001","Mercedes","EQC 400 4MATIC",414,80.0),
-            V("a0000032-0000-0000-0000-000000000001","Mercedes","EQE 350+",654,90.6),
-            V("a0000033-0000-0000-0000-000000000001","Mercedes","EQS 450+",770,107.8),
-            V("a0000034-0000-0000-0000-000000000001","Audi","Q4 e-tron 40",520,82.0),
-            V("a0000035-0000-0000-0000-000000000001","Audi","Q4 e-tron 50 quattro",488,82.0),
-            V("a0000036-0000-0000-0000-000000000001","Audi","Q8 e-tron 55",582,114.0),
-            V("a0000037-0000-0000-0000-000000000001","Audi","e-tron GT",488,93.4),
-            V("a0000038-0000-0000-0000-000000000001","Audi","RS e-tron GT",472,93.4),
-            V("a0000039-0000-0000-0000-000000000001","Volkswagen","ID.3 Pro (58 kWh)",426,58.0),
-            V("a0000040-0000-0000-0000-000000000001","Volkswagen","ID.3 Pro S (77 kWh)",549,77.0),
-            V("a0000041-0000-0000-0000-000000000001","Volkswagen","ID.4 Pro (77 kWh)",522,77.0),
-            V("a0000042-0000-0000-0000-000000000001","Volkswagen","ID.4 GTX AWD",490,77.0),
-            V("a0000043-0000-0000-0000-000000000001","Volkswagen","ID.5 GTX",490,77.0),
-            V("a0000044-0000-0000-0000-000000000001","Volkswagen","ID.7 Pro S",709,91.0),
-            V("a0000045-0000-0000-0000-000000000001","Porsche","Taycan 4S",484,93.4),
-            V("a0000046-0000-0000-0000-000000000001","Porsche","Taycan Turbo",435,93.4),
-            V("a0000047-0000-0000-0000-000000000001","Porsche","Macan Electric",516,100.0),
-            V("a0000048-0000-0000-0000-000000000001","Peugeot","e-208 (50 kWh)",362,50.0),
-            V("a0000049-0000-0000-0000-000000000001","Peugeot","e-2008 (54 kWh)",406,54.0),
-            V("a0000050-0000-0000-0000-000000000001","Peugeot","e-308 (54 kWh)",416,54.0),
-            V("a0000051-0000-0000-0000-000000000001","Renault","Zoe ZE50",386,52.0),
-            V("a0000052-0000-0000-0000-000000000001","Renault","Megane E-Tech 60 kWh",450,60.0),
-            V("a0000053-0000-0000-0000-000000000001","Renault","Scenic E-Tech 87 kWh",620,87.0),
-            V("a0000054-0000-0000-0000-000000000001","Fiat","500e (42 kWh)",321,42.0),
-            V("a0000055-0000-0000-0000-000000000001","Fiat","600e",409,54.0),
-            V("a0000056-0000-0000-0000-000000000001","Opel","Corsa-e (50 kWh)",359,50.0),
-            V("a0000057-0000-0000-0000-000000000001","Opel","Mokka-e (50 kWh)",338,50.0),
-            V("a0000058-0000-0000-0000-000000000001","Opel","Astra Electric",416,54.0),
-            V("a0000059-0000-0000-0000-000000000001","Cupra","Born (58 kWh)",424,58.0),
-            V("a0000060-0000-0000-0000-000000000001","Cupra","Born (77 kWh)",570,77.0),
-            V("a0000061-0000-0000-0000-000000000001","Cupra","Tavascan VZ",517,77.0),
-            V("a0000062-0000-0000-0000-000000000001","Skoda","Enyaq 60",412,62.0),
-            V("a0000063-0000-0000-0000-000000000001","Skoda","Enyaq 85",572,82.0),
-            V("a0000064-0000-0000-0000-000000000001","Volvo","C40 Recharge",476,82.0),
-            V("a0000065-0000-0000-0000-000000000001","Volvo","EX30 Single Motor",344,51.0),
-            V("a0000066-0000-0000-0000-000000000001","Volvo","EX40 Single Motor",473,82.0),
-            V("a0000067-0000-0000-0000-000000000001","Volvo","EX90 Twin Motor",580,111.0),
-            V("a0000068-0000-0000-0000-000000000001","Polestar","Polestar 2 Standard",490,69.0),
-            V("a0000069-0000-0000-0000-000000000001","Polestar","Polestar 2 Long Range",592,82.0),
-            V("a0000070-0000-0000-0000-000000000001","Polestar","Polestar 3",561,111.0),
-            V("a0000071-0000-0000-0000-000000000001","Polestar","Polestar 4",560,100.0),
-            V("a0000072-0000-0000-0000-000000000001","Lexus","UX 300e",315,72.8),
-            V("a0000073-0000-0000-0000-000000000001","Lexus","RZ 450e",440,71.4),
-            V("a0000074-0000-0000-0000-000000000001","BYD","Atto 3 (60.5 kWh)",420,60.5),
-            V("a0000075-0000-0000-0000-000000000001","BYD","Seal Design (61.4 kWh)",460,61.4),
-            V("a0000102-0000-0000-0000-000000000001","BYD","Seal Excellence AWD (82.5 kWh)",520,82.5),
-            V("a0000076-0000-0000-0000-000000000001","BYD","Han (85.4 kWh)",521,85.4),
-            V("a0000077-0000-0000-0000-000000000001","BYD","Dolphin (60.4 kWh)",427,60.4),
-            V("a0000078-0000-0000-0000-000000000001","Citroen","e-C4 (54 kWh)",420,54.0),
-            V("a0000079-0000-0000-0000-000000000001","Nissan","Leaf (40 kWh)",270,40.0),
-            V("a0000080-0000-0000-0000-000000000001","Nissan","Leaf e+ (62 kWh)",385,62.0),
-            V("a0000081-0000-0000-0000-000000000001","Nissan","Ariya 87 kWh",533,87.0),
-            V("a0000082-0000-0000-0000-000000000001","Togg","T10X Standard Range (52.4 kWh)",314,52.4),
-            V("a0000083-0000-0000-0000-000000000001","Togg","T10F Standard Range (52.4 kWh)",350,52.4),
-            V("a0000084-0000-0000-0000-000000000001","Tesla","Model Y Performance",514,75.0),
-            V("a0000085-0000-0000-0000-000000000001","Tesla","Model 3 Performance",528,82.0),
-            V("a0000086-0000-0000-0000-000000000001","Hyundai","Ioniq 5 AWD (77.4 kWh)",430,77.4),
-            V("a0000087-0000-0000-0000-000000000001","BMW","i4 eDrive35",483,70.2),
-            V("a0000088-0000-0000-0000-000000000001","MG","MG4 Standard Range",350,51.0),
-            V("a0000089-0000-0000-0000-000000000001","MG","MG4 Luxury/Long Range",435,64.0),
-            V("a0000090-0000-0000-0000-000000000001","MG","ZS EV Standard Range",320,51.0),
-            V("a0000091-0000-0000-0000-000000000001","MG","ZS EV Long Range",440,72.0),
-            V("a0000092-0000-0000-0000-000000000001","Renault","Megane E-Tech 40 kWh",300,40.0),
-            V("a0000093-0000-0000-0000-000000000001","Volvo","XC40 Recharge Twin",530,82.0),
-            V("a0000094-0000-0000-0000-000000000001","Dacia","Spring",230,26.8),
-            V("a0000095-0000-0000-0000-000000000001","Peugeot","e-208 (54 kWh)",400,54.0),
-            V("a0000096-0000-0000-0000-000000000001","BYD","Seal U EV Comfort (71.8 kWh)",420,71.8),
-            V("a0000097-0000-0000-0000-000000000001","BYD","Seal U EV Design (87 kWh)",500,87.0),
-            V("a0000098-0000-0000-0000-000000000001","Fiat","Grande Panda Electric",320,44.0),
-            V("a0000099-0000-0000-0000-000000000001","Hyundai","Inster Standard Range",300,42.0),
-            V("a0000100-0000-0000-0000-000000000001","Hyundai","Inster Long Range",355,49.0),
-            V("a0000101-0000-0000-0000-000000000001","Citroen","e-C3",320,44.0)
+            V("a0000001-0000-0000-0000-000000000001","Togg","T10X (88.5 kWh)",523,88.5,16.7),
+            V("a0000002-0000-0000-0000-000000000001","Togg","T10F V1 Uzun Menzil (88.5 kWh)",623,88.5,16.1),
+            V("a0000103-0000-0000-0000-000000000001","Togg","T10F V2 AWD (88.5 kWh)",523,88.5,16.9),
+            V("a0000003-0000-0000-0000-000000000001","Tesla","Model Y Standard Range",455,57.5,15.7),
+            V("a0000004-0000-0000-0000-000000000001","Tesla","Model Y Long Range",533,75.0,16.9),
+            V("a0000005-0000-0000-0000-000000000001","Tesla","Model 3 Standard Range",513,57.5,13.2),
+            V("a0000006-0000-0000-0000-000000000001","Tesla","Model 3 Long Range",629,82.0,14.0),
+            V("a0000007-0000-0000-0000-000000000001","Tesla","Model X",576,100.0,19.1),
+            V("a0000008-0000-0000-0000-000000000001","Tesla","Model S Long Range",652,100.0,17.5),
+            V("a0000009-0000-0000-0000-000000000001","Hyundai","Ioniq 5 Standard (58 kWh)",385,58.0,16.7),
+            V("a0000010-0000-0000-0000-000000000001","Hyundai","Ioniq 5 Long Range (77 kWh)",481,72.6,17.0),
+            V("a0000011-0000-0000-0000-000000000001","Hyundai","Ioniq 6 Long Range",614,77.4,14.3),
+            V("a0000012-0000-0000-0000-000000000001","Hyundai","Kona Electric (65.4 kWh)",514,65.4,14.7),
+            V("a0000013-0000-0000-0000-000000000001","Kia","EV6 Standard Range",394,58.0,16.6),
+            V("a0000014-0000-0000-0000-000000000001","Kia","EV6 Long Range",528,77.4,16.5),
+            V("a0000015-0000-0000-0000-000000000001","Kia","EV9 Long Range",563,99.8,22.8),
+            V("a0000016-0000-0000-0000-000000000001","Kia","Niro EV",463,64.8,16.2),
+            V("a0000017-0000-0000-0000-000000000001","BMW","i3 (42.2 kWh)",285,42.2,15.3),
+            V("a0000018-0000-0000-0000-000000000001","BMW","i4 eDrive40",590,83.9,16.1),
+            V("a0000019-0000-0000-0000-000000000001","BMW","i4 M50",510,83.9,18.0),
+            V("a0000020-0000-0000-0000-000000000001","BMW","iX3",461,80.0,18.5),
+            V("a0000021-0000-0000-0000-000000000001","BMW","iX xDrive40",425,76.6,19.4),
+            V("a0000022-0000-0000-0000-000000000001","BMW","iX xDrive50",630,111.5,19.8),
+            V("a0000023-0000-0000-0000-000000000001","MINI","Cooper SE Electric",234,32.6,15.2),
+            V("a0000024-0000-0000-0000-000000000001","MINI","Cooper Electric (54 kWh)",402,54.2,14.1),
+            V("a0000025-0000-0000-0000-000000000001","MINI","Aceman E (40.7 kWh)",310,40.7,14.1),
+            V("a0000026-0000-0000-0000-000000000001","MINI","Aceman SE (54.2 kWh)",406,54.2,14.1),
+            V("a0000027-0000-0000-0000-000000000001","MINI","Countryman E",462,66.5,15.7),
+            V("a0000028-0000-0000-0000-000000000001","MINI","Countryman SE ALL4",433,66.5,16.8),
+            V("a0000029-0000-0000-0000-000000000001","Mercedes","EQA 250+",426,70.5,14.4),
+            V("a0000030-0000-0000-0000-000000000001","Mercedes","EQB 350 4MATIC",419,66.5,18.1),
+            V("a0000031-0000-0000-0000-000000000001","Mercedes","EQC 400 4MATIC",414,80.0,22.2),
+            V("a0000032-0000-0000-0000-000000000001","Mercedes","EQE 350+",654,90.6,15.9),
+            V("a0000033-0000-0000-0000-000000000001","Mercedes","EQS 450+",770,107.8,15.6),
+            V("a0000034-0000-0000-0000-000000000001","Audi","Q4 e-tron 40",520,82.0,17.3),
+            V("a0000035-0000-0000-0000-000000000001","Audi","Q4 e-tron 50 quattro",488,82.0,17.9),
+            V("a0000036-0000-0000-0000-000000000001","Audi","Q8 e-tron 55",582,114.0,20.6),
+            V("a0000037-0000-0000-0000-000000000001","Audi","e-tron GT",488,93.4,19.9),
+            V("a0000038-0000-0000-0000-000000000001","Audi","RS e-tron GT",472,93.4,20.6),
+            V("a0000039-0000-0000-0000-000000000001","Volkswagen","ID.3 Pro (58 kWh)",426,58.0,15.3),
+            V("a0000040-0000-0000-0000-000000000001","Volkswagen","ID.3 Pro S (77 kWh)",549,77.0,15.7),
+            V("a0000041-0000-0000-0000-000000000001","Volkswagen","ID.4 Pro (77 kWh)",522,77.0,16.5),
+            V("a0000042-0000-0000-0000-000000000001","Volkswagen","ID.4 GTX AWD",490,77.0,17.6),
+            V("a0000043-0000-0000-0000-000000000001","Volkswagen","ID.5 GTX",490,77.0,17.1),
+            V("a0000044-0000-0000-0000-000000000001","Volkswagen","ID.7 Pro S",709,91.0,14.1),
+            V("a0000045-0000-0000-0000-000000000001","Porsche","Taycan 4S",484,93.4,20.4),
+            V("a0000046-0000-0000-0000-000000000001","Porsche","Taycan Turbo",435,93.4,20.5),
+            V("a0000047-0000-0000-0000-000000000001","Porsche","Macan Electric",516,100.0,17.9),
+            V("a0000048-0000-0000-0000-000000000001","Peugeot","e-208 (50 kWh)",362,50.0,15.4),
+            V("a0000049-0000-0000-0000-000000000001","Peugeot","e-2008 (54 kWh)",406,54.0,15.4),
+            V("a0000050-0000-0000-0000-000000000001","Peugeot","e-308 (54 kWh)",416,54.0,15.1),
+            V("a0000051-0000-0000-0000-000000000001","Renault","Zoe ZE50",386,52.0,17.7),
+            V("a0000052-0000-0000-0000-000000000001","Renault","Megane E-Tech 60 kWh",450,60.0,16.1),
+            V("a0000053-0000-0000-0000-000000000001","Renault","Scenic E-Tech 87 kWh",620,87.0,16.8),
+            V("a0000054-0000-0000-0000-000000000001","Fiat","500e (42 kWh)",321,42.0,14.0),
+            V("a0000055-0000-0000-0000-000000000001","Fiat","600e",409,54.0,15.1),
+            V("a0000056-0000-0000-0000-000000000001","Opel","Corsa-e (50 kWh)",359,50.0,15.6),
+            V("a0000057-0000-0000-0000-000000000001","Opel","Mokka-e (50 kWh)",338,50.0,15.8),
+            V("a0000058-0000-0000-0000-000000000001","Opel","Astra Electric",416,54.0,14.8),
+            V("a0000059-0000-0000-0000-000000000001","Cupra","Born (58 kWh)",424,58.0,15.3),
+            V("a0000060-0000-0000-0000-000000000001","Cupra","Born (77 kWh)",570,77.0,15.7),
+            V("a0000061-0000-0000-0000-000000000001","Cupra","Tavascan VZ",517,77.0,16.6),
+            V("a0000062-0000-0000-0000-000000000001","Skoda","Enyaq 60",412,62.0,15.8),
+            V("a0000063-0000-0000-0000-000000000001","Skoda","Enyaq 85",572,82.0,14.9),
+            V("a0000064-0000-0000-0000-000000000001","Volvo","C40 Recharge",476,82.0,18.0),
+            V("a0000065-0000-0000-0000-000000000001","Volvo","EX30 Single Motor",344,51.0,16.7),
+            V("a0000066-0000-0000-0000-000000000001","Volvo","EX40 Single Motor",473,82.0,17.1),
+            V("a0000067-0000-0000-0000-000000000001","Volvo","EX90 Twin Motor",580,111.0,20.9),
+            V("a0000068-0000-0000-0000-000000000001","Polestar","Polestar 2 Standard",490,69.0,14.8),
+            V("a0000069-0000-0000-0000-000000000001","Polestar","Polestar 2 Long Range",592,82.0,14.8),
+            V("a0000070-0000-0000-0000-000000000001","Polestar","Polestar 3",561,111.0,20.1),
+            V("a0000071-0000-0000-0000-000000000001","Polestar","Polestar 4",560,100.0,16.7),
+            V("a0000072-0000-0000-0000-000000000001","Lexus","UX 300e",315,72.8,16.7),
+            V("a0000073-0000-0000-0000-000000000001","Lexus","RZ 450e",440,71.4,16.8),
+            V("a0000074-0000-0000-0000-000000000001","BYD","Atto 3 (60.5 kWh)",420,60.5,15.6),
+            V("a0000075-0000-0000-0000-000000000001","BYD","Seal Design (61.4 kWh)",460,61.4,16.6),
+            V("a0000102-0000-0000-0000-000000000001","BYD","Seal Excellence AWD (82.5 kWh)",520,82.5,18.2),
+            V("a0000076-0000-0000-0000-000000000001","BYD","Han (85.4 kWh)",521,85.4,18.5),
+            V("a0000077-0000-0000-0000-000000000001","BYD","Dolphin (60.4 kWh)",427,60.4,15.9),
+            V("a0000078-0000-0000-0000-000000000001","Citroen","e-C4 (54 kWh)",420,54.0,15.3),
+            V("a0000079-0000-0000-0000-000000000001","Nissan","Leaf (40 kWh)",270,40.0,17.1),
+            V("a0000080-0000-0000-0000-000000000001","Nissan","Leaf e+ (62 kWh)",385,62.0,18.5),
+            V("a0000081-0000-0000-0000-000000000001","Nissan","Ariya 87 kWh",533,87.0,19.5),
+            V("a0000082-0000-0000-0000-000000000001","Togg","T10X Standard Range (52.4 kWh)",314,52.4,16.7),
+            V("a0000083-0000-0000-0000-000000000001","Togg","T10F Standard Range (52.4 kWh)",350,52.4,16.1),
+            V("a0000084-0000-0000-0000-000000000001","Tesla","Model Y Performance",514,75.0,17.3),
+            V("a0000085-0000-0000-0000-000000000001","Tesla","Model 3 Performance",528,82.0,16.7),
+            V("a0000086-0000-0000-0000-000000000001","Hyundai","Ioniq 5 AWD (77.4 kWh)",430,77.4,17.9),
+            V("a0000087-0000-0000-0000-000000000001","BMW","i4 eDrive35",483,70.2,15.8),
+            V("a0000088-0000-0000-0000-000000000001","MG","MG4 Standard Range",350,51.0,17.0),
+            V("a0000089-0000-0000-0000-000000000001","MG","MG4 Luxury/Long Range",435,64.0,16.0),
+            V("a0000090-0000-0000-0000-000000000001","MG","ZS EV Standard Range",320,51.0,17.3),
+            V("a0000091-0000-0000-0000-000000000001","MG","ZS EV Long Range",440,72.0,17.8),
+            V("a0000092-0000-0000-0000-000000000001","Renault","Megane E-Tech 40 kWh",300,40.0,15.8),
+            V("a0000093-0000-0000-0000-000000000001","Volvo","XC40 Recharge Twin",530,82.0,18.2),
+            V("a0000094-0000-0000-0000-000000000001","Dacia","Spring",230,26.8,14.5),
+            V("a0000095-0000-0000-0000-000000000001","Peugeot","e-208 (54 kWh)",400,54.0,14.0),
+            V("a0000096-0000-0000-0000-000000000001","BYD","Seal U EV Comfort (71.8 kWh)",420,71.8,20.5),
+            V("a0000097-0000-0000-0000-000000000001","BYD","Seal U EV Design (87 kWh)",500,87.0,20.5),
+            V("a0000098-0000-0000-0000-000000000001","Fiat","Grande Panda Electric",320,44.0,15.0),
+            V("a0000099-0000-0000-0000-000000000001","Hyundai","Inster Standard Range",300,42.0,15.3),
+            V("a0000100-0000-0000-0000-000000000001","Hyundai","Inster Long Range",355,49.0,15.3),
+            V("a0000101-0000-0000-0000-000000000001","Citroen","e-C3",320,44.0,17.1)
         };
         context.Vehicles.AddRange(v);
         context.SaveChanges();
@@ -413,6 +433,179 @@ public static class DbInitializer
 
     private static string NonEmpty(string? s, string fallback) =>
         string.IsNullOrWhiteSpace(s) ? fallback : s;
+
+    // ─── Neva Şarj parser ─────────────────────────────────────────────────────
+    private static void ParseNevaJson(string path, List<Station> result)
+    {
+        using var doc = JsonDocument.Parse(File.ReadAllText(path));
+        foreach (var element in doc.RootElement.EnumerateArray())
+        {
+            var name = element.GetProperty("name").GetString();
+            var lat = element.GetProperty("lat").GetDouble();
+            var lng = element.GetProperty("lng").GetDouble();
+            var ac = element.GetProperty("ac").GetInt32();
+            var dc = element.GetProperty("dc").GetInt32();
+
+            if (IsDuplicate(result, lat, lng)) continue;
+
+            result.Add(new Station
+            {
+                Id = Guid.NewGuid(),
+                Name = NonEmpty(name, "Bilinmeyen Neva İstasyonu"),
+                Latitude = lat,
+                Longitude = lng,
+                Brand = "Neva",
+                IsFastCharge = dc > 0,
+                AcConnectorCount = ac,
+                DcConnectorCount = dc
+            });
+        }
+    }
+
+    // ─── WAT Mobilite parser ──────────────────────────────────────────────────
+    private static void ParseWatJs(string path, List<Station> result)
+    {
+        var rawText = File.ReadAllText(path);
+        int startIndex = rawText.IndexOf('[');
+        int endIndex = rawText.LastIndexOf(']');
+        
+        if (startIndex == -1 || endIndex == -1) return;
+        
+        string jsonText = rawText.Substring(startIndex, endIndex - startIndex + 1);
+        
+        using var doc = JsonDocument.Parse(jsonText);
+        foreach (var element in doc.RootElement.EnumerateArray())
+        {
+            var name = element.TryGetProperty("baslik_0", out var nameProp) ? nameProp.GetString() : "WAT İstasyonu";
+            var latStr = element.TryGetProperty("enlem", out var latProp) ? latProp.GetString() : null;
+            var lngStr = element.TryGetProperty("boylam", out var lngProp) ? lngProp.GetString() : null;
+            
+            if (!double.TryParse(latStr?.Replace(',', '.'), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out double lat)) continue;
+            if (!double.TryParse(lngStr?.Replace(',', '.'), System.Globalization.NumberStyles.Any, System.Globalization.CultureInfo.InvariantCulture, out double lng)) continue;
+
+            if (IsDuplicate(result, lat, lng)) continue;
+
+            var acText = element.TryGetProperty("ac_soket", out var acProp) ? acProp.GetString() : "";
+            var dcText = element.TryGetProperty("dc_soket", out var dcProp) ? dcProp.GetString() : "";
+            
+            int acCount = ParseWatSocketCount(acText);
+            int dcCount = ParseWatSocketCount(dcText);
+
+            result.Add(new Station
+            {
+                Id = Guid.NewGuid(),
+                Name = NonEmpty(name, "Bilinmeyen WAT İstasyonu"),
+                Latitude = lat,
+                Longitude = lng,
+                Brand = "Wat Mobilite",
+                IsFastCharge = dcCount > 0,
+                AcConnectorCount = acCount,
+                DcConnectorCount = dcCount
+            });
+        }
+    }
+
+    private static int ParseWatSocketCount(string? text)
+    {
+        if (string.IsNullOrWhiteSpace(text)) return 0;
+        int total = 0;
+        var parts = text.Split(new[] { '&', '+' }, StringSplitOptions.RemoveEmptyEntries);
+        foreach(var part in parts)
+        {
+            var p = part.Trim();
+            if (p.Length > 0 && char.IsDigit(p[0]))
+            {
+                int i = 0;
+                while(i < p.Length && char.IsDigit(p[i])) i++;
+                if (int.TryParse(p.Substring(0, i), out int count))
+                {
+                    total += count;
+                }
+            }
+        }
+        return total > 0 ? total : 0;
+    }
+
+    // ─── En Yakıt parser ──────────────────────────────────────────────────────
+    private static void ParseEnyakitJson(string path, List<Station> result)
+    {
+        var opts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var data = JsonSerializer.Deserialize<List<StationJson>>(File.ReadAllText(path), opts);
+        if (data == null) return;
+
+        foreach (var s in data)
+        {
+            if (IsDuplicate(result, s.Latitude, s.Longitude)) continue;
+
+            result.Add(new Station
+            {
+                Id = Guid.NewGuid(),
+                Name = NonEmpty(s.Name, "Bilinmeyen En Yakıt İstasyonu"),
+                Latitude = s.Latitude,
+                Longitude = s.Longitude,
+                Brand = "En Yakıt",
+                IsFastCharge = s.DcConnectorCount > 0 || s.HpcConnectorCount > 0,
+                AcConnectorCount = s.AcConnectorCount,
+                DcConnectorCount = s.DcConnectorCount,
+                HpcConnectorCount = s.HpcConnectorCount,
+                MaxPowerKw = s.MaxElectricPower > 0 ? s.MaxElectricPower : null
+            });
+        }
+    }
+
+    // ─── Aksa Şarj parser ─────────────────────────────────────────────────────
+    private static void ParseAksaJson(string path, List<Station> result)
+    {
+        var opts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var data = JsonSerializer.Deserialize<List<StationJson>>(File.ReadAllText(path), opts);
+        if (data == null) return;
+
+        foreach (var s in data)
+        {
+            if (IsDuplicate(result, s.Latitude, s.Longitude)) continue;
+
+            result.Add(new Station
+            {
+                Id = Guid.NewGuid(),
+                Name = NonEmpty(s.Name, "Bilinmeyen Aksa Şarj İstasyonu"),
+                Latitude = s.Latitude,
+                Longitude = s.Longitude,
+                Brand = "Aksa Şarj",
+                IsFastCharge = s.DcConnectorCount > 0 || s.HpcConnectorCount > 0,
+                AcConnectorCount = s.AcConnectorCount,
+                DcConnectorCount = s.DcConnectorCount,
+                HpcConnectorCount = s.HpcConnectorCount,
+                MaxPowerKw = s.MaxElectricPower > 0 ? s.MaxElectricPower : null
+            });
+        }
+    }
+
+    // ─── RST Chargepoint parser ───────────────────────────────────────────────
+    private static void ParseRstJson(string path, List<Station> result)
+    {
+        var opts = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+        var data = JsonSerializer.Deserialize<List<StationJson>>(File.ReadAllText(path), opts);
+        if (data == null) return;
+
+        foreach (var s in data)
+        {
+            if (IsDuplicate(result, s.Latitude, s.Longitude)) continue;
+
+            result.Add(new Station
+            {
+                Id = Guid.NewGuid(),
+                Name = NonEmpty(s.Name, "Bilinmeyen RST Chargepoint İstasyonu"),
+                Latitude = s.Latitude,
+                Longitude = s.Longitude,
+                Brand = "RST Chargepoint",
+                IsFastCharge = s.DcConnectorCount > 0 || s.HpcConnectorCount > 0,
+                AcConnectorCount = s.AcConnectorCount,
+                DcConnectorCount = s.DcConnectorCount,
+                HpcConnectorCount = s.HpcConnectorCount,
+                MaxPowerKw = s.MaxElectricPower > 0 ? s.MaxElectricPower : null
+            });
+        }
+    }
 }
 
 // ── Deserialization modelleri ──────────────────────────────────────────────────
