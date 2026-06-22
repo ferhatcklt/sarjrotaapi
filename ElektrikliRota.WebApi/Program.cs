@@ -14,9 +14,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Rate Limiting Ayarları (IP başına dakikada 10 istek - DoS Koruması)
+// Rate Limiting Ayarları (DoS Koruması)
 builder.Services.AddRateLimiter(options =>
 {
+    // Route hesaplama endpoint'i için sıkı limit (IP başına dakikada 10 istek)
     options.AddFixedWindowLimiter("RouteApiLimit", opt =>
     {
         opt.PermitLimit = 10;
@@ -24,6 +25,17 @@ builder.Services.AddRateLimiter(options =>
         opt.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
         opt.QueueLimit = 2;
     });
+
+    // Genel API limiti (IP başına dakikada 60 istek)
+    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(context =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: context.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+            factory: _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 60,
+                Window = TimeSpan.FromMinutes(1)
+            }));
+
     options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
 });
 
@@ -58,7 +70,8 @@ builder.Services.AddCors(options =>
             "http://localhost:8081",  // iOS Simulator Expo
             "http://192.168.1.108:8081", // Fiziksel cihaz Expo
             "https://sarjrota.com.tr",
-            "https://www.sarjrota.com.tr"
+            "https://www.sarjrota.com.tr",
+            "https://sarjrota-api.fcstudios.workers.dev" // Cloudflare Worker Proxy
         )
         .AllowAnyMethod()
         .AllowAnyHeader();
@@ -97,6 +110,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
