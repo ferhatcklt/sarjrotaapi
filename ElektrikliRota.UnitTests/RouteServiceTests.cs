@@ -44,7 +44,7 @@ public class RouteServiceTests
         var availableStations = new List<Station>(); // Hiç istasyon yok
 
         // Act
-        var (stops, arrivalCharge) = _routeService.BuildChargeStops(path, distKm, durSec, vehicle, availableStations, 100);
+        var (stops, arrivalCharge) = _routeService.BuildChargeStops(path, distKm, durSec, vehicle, availableStations, 100, 0);
 
         // Assert — İstasyon bulunamadığı için null dönmeli
         stops.Should().BeNull();
@@ -75,7 +75,7 @@ public class RouteServiceTests
         };
 
         // Act
-        var (stops, arrivalCharge) = _routeService.BuildChargeStops(path, distKm, durSec, vehicle, availableStations, 100);
+        var (stops, arrivalCharge) = _routeService.BuildChargeStops(path, distKm, durSec, vehicle, availableStations, 100, 0);
 
         // Assert — İstasyon bulunup durak olarak eklenmeli
         stops.Should().NotBeNull();
@@ -99,11 +99,38 @@ public class RouteServiceTests
         var availableStations = new List<Station>();
 
         // Act
-        var (stops, arrivalCharge) = _routeService.BuildChargeStops(path, distKm, durSec, vehicle, availableStations, 100);
+        var (stops, arrivalCharge) = _routeService.BuildChargeStops(path, distKm, durSec, vehicle, availableStations, 100, 0);
 
         // Assert — Menzil yeterli, durak eklenmemeli ve varış şarjı > 0
         stops.Should().NotBeNull();
         stops.Should().BeEmpty();
         arrivalCharge.Should().BeGreaterThan(0);
+    }
+
+    [Fact]
+    public async Task CalculateRouteAsync_Should_Return_Valid_Route_When_OSRM_Responds()
+    {
+        var httpClient = new HttpClient();
+        var httpClientFactoryMock = new Mock<IHttpClientFactory>();
+        httpClientFactoryMock.Setup(f => f.CreateClient(It.IsAny<string>())).Returns(httpClient);
+
+        var stationRepoMock = new Mock<IStationRepository>();
+        stationRepoMock.Setup(r => r.GetAllStationsAsync()).ReturnsAsync(new List<Station>());
+
+        var configMock = new Mock<IConfiguration>();
+        configMock.Setup(c => c["OsrmSettings:BaseUrl"]).Returns("https://router.project-osrm.org");
+
+        var service = new RouteService(stationRepoMock.Object, httpClientFactoryMock.Object, configMock.Object);
+
+        var start = new Location { Latitude = 41.0082, Longitude = 28.9784 }; // Istanbul
+        var end   = new Location { Latitude = 40.9801, Longitude = 29.0823 }; // Kadikoy (short trip)
+        var vehicle = new Vehicle { RangeKm = 400, BatteryCapacityKWh = 75 };
+
+        var result = await service.CalculateRouteAsync(start, end, vehicle, new(), new(), 100, 0);
+
+        result.Should().NotBeNull();
+        result.Path.Should().NotBeEmpty();
+        result.TotalDistanceKm.Should().BeGreaterThan(0);
+        result.EstimatedDurationHours.Should().BeGreaterThan(0);
     }
 }

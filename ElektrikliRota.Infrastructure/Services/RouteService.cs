@@ -3,6 +3,7 @@ using ElektrikliRota.Core.Entities;
 using ElektrikliRota.Core.Interfaces;
 using ElektrikliRota.Core.Models;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System.Net.Http;
 
 namespace ElektrikliRota.Infrastructure.Services;
@@ -11,17 +12,36 @@ public class RouteService : IRouteService
 {
     private readonly IStationRepository _stationRepository;
     private readonly IHttpClientFactory _httpClientFactory;
+    private readonly ILogger<RouteService>? _logger;
     private readonly string _osrmBaseUrl;
 
     private const double RealisticRangeFactor  = 0.90;  // Fabrika menzilinin %90'ı
     private const double ChargeThresholdFactor  = 0.10;  // Bu miktarı kalınca şarj et
     private const double NearbyCorridorKm       = 3.0;  // Rota koridoru genişliği (km)
+    private const string BrowserUserAgent      = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36";
 
-    public RouteService(IStationRepository stationRepository, IHttpClientFactory httpClientFactory, IConfiguration configuration)
+    public RouteService(
+        IStationRepository stationRepository, 
+        IHttpClientFactory httpClientFactory, 
+        IConfiguration configuration,
+        ILogger<RouteService>? logger = null)
     {
         _stationRepository = stationRepository;
         _httpClientFactory = httpClientFactory;
-        _osrmBaseUrl = configuration["OsrmSettings:BaseUrl"] ?? "http://router.project-osrm.org";
+        _logger = logger;
+        
+        var configuredUrl = configuration["OsrmSettings:BaseUrl"];
+        if (string.IsNullOrWhiteSpace(configuredUrl))
+        {
+            _osrmBaseUrl = "https://router.project-osrm.org";
+        }
+        else
+        {
+            // OSRM için https tercih et
+            _osrmBaseUrl = configuredUrl.StartsWith("http://", StringComparison.OrdinalIgnoreCase) 
+                ? "https://" + configuredUrl[7..] 
+                : configuredUrl;
+        }
     }
 
     public async Task<RouteResult> CalculateRouteAsync(
@@ -31,7 +51,11 @@ public class RouteService : IRouteService
         // 1. İlk OSRM çağrısı — alternatives=true, ham geometri
         var initialRoutes = await FetchOsrmRoutes(start, end, null);
         if (initialRoutes.Count == 0)
-            return new RouteResult();
+        {
+            _logger?.LogError("OSRM'den rota verisi alınamadı. Başlangıç: ({StartLat}, {StartLng}) -> Bitiş: ({EndLat}, {EndLng})",
+                start.Latitude, start.Longitude, end.Latitude, end.Longitude);
+            throw new Exception("Harita ve rota servisinden (OSRM) yol verisi alınamadı. Lütfen daha sonra tekrar deneyiniz.");
+        }
 
         // 2. İstasyon havuzu filtrele
         var allStations = (await _stationRepository.GetAllStationsAsync()).ToList();
@@ -135,57 +159,93 @@ public class RouteService : IRouteService
     private async Task<List<(List<Location> Path, double DistKm, double DurSec)>> FetchOsrmRoutes(
         Location start, Location end, List<Location>? waypoints)
     {
-        var sb = new System.Text.StringBuilder();
-        sb.Append($"{_osrmBaseUrl.TrimEnd('/')}/route/v1/driving/");
+        var coordinatesPath = new System.Text.StringBuilder();
 
         // Başlangıç
-        sb.Append($"{start.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture)},{start.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture)}");
+        coordinatesPath.Append($"{start.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture)},{start.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture)}");
 
         // Ara noktalar
         if (waypoints != null)
         {
             foreach (var wp in waypoints)
             {
-                sb.Append(';');
-                sb.Append($"{wp.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture)},{wp.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture)}");
+                coordinatesPath.Append(';');
+                coordinatesPath.Append($"{wp.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture)},{wp.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture)}");
             }
         }
 
         // Bitiş
-        sb.Append(';');
-        sb.Append($"{end.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture)},{end.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture)}");
+        coordinatesPath.Append(';');
+        coordinatesPath.Append($"{end.Longitude.ToString(System.Globalization.CultureInfo.InvariantCulture)},{end.Latitude.ToString(System.Globalization.CultureInfo.InvariantCulture)}");
 
-        // Waypoint'li çağrıda OSRM alternatives desteklemiyor
         var alts = (waypoints == null || waypoints.Count == 0) ? "&alternatives=true" : "";
-        sb.Append($"?overview=full&geometries=geojson{alts}");
+        var relativeUrl = $"/route/v1/driving/{coordinatesPath}?overview=full&geometries=geojson{alts}";
 
-        var client = _httpClientFactory.CreateClient();
-        HttpResponseMessage response;
-        try { response = await client.GetAsync(sb.ToString()); }
-        catch { return new(); }
-
-        if (!response.IsSuccessStatusCode) return new();
-
-        var json = await response.Content.ReadAsStringAsync();
-        using var document = JsonDocument.Parse(json);
-
-        var results = new List<(List<Location>, double, double)>();
-        var routes  = document.RootElement.GetProperty("routes");
-
-        foreach (var osrmRoute in routes.EnumerateArray())
+        // OSRM Base URL listesi (Birincil ve yedek)
+        var targetBases = new List<string> { _osrmBaseUrl.TrimEnd('/') };
+        if (_osrmBaseUrl.StartsWith("https://", StringComparison.OrdinalIgnoreCase))
         {
-            var dist   = osrmRoute.GetProperty("distance").GetDouble() / 1000.0;
-            var dur    = osrmRoute.GetProperty("duration").GetDouble();
-            var coords = osrmRoute.GetProperty("geometry").GetProperty("coordinates");
-
-            var path = new List<Location>();
-            foreach (var coord in coords.EnumerateArray())
-                path.Add(new Location { Longitude = coord[0].GetDouble(), Latitude = coord[1].GetDouble() });
-
-            results.Add((path, dist, dur));
+            targetBases.Add("http://" + _osrmBaseUrl[8..].TrimEnd('/'));
+        }
+        else if (_osrmBaseUrl.StartsWith("http://", StringComparison.OrdinalIgnoreCase))
+        {
+            targetBases.Insert(0, "https://" + _osrmBaseUrl[7..].TrimEnd('/'));
         }
 
-        return results;
+        var client = _httpClientFactory.CreateClient();
+        client.Timeout = TimeSpan.FromSeconds(15);
+
+        foreach (var baseUrl in targetBases.Distinct())
+        {
+            var fullUrl = $"{baseUrl}{relativeUrl}";
+            try
+            {
+                using var request = new HttpRequestMessage(HttpMethod.Get, fullUrl);
+                request.Headers.Add("User-Agent", BrowserUserAgent);
+                request.Headers.Add("Accept", "application/json");
+
+                using var response = await client.SendAsync(request);
+                if (!response.IsSuccessStatusCode)
+                {
+                    _logger?.LogWarning("OSRM ({Url}) HTTP {StatusCode} döndürdü.", fullUrl, (int)response.StatusCode);
+                    continue;
+                }
+
+                var json = await response.Content.ReadAsStringAsync();
+                using var document = JsonDocument.Parse(json);
+
+                if (!document.RootElement.TryGetProperty("routes", out var routes) || routes.GetArrayLength() == 0)
+                {
+                    _logger?.LogWarning("OSRM ({Url}) 'routes' dizisi boş veya bulunamadı.", fullUrl);
+                    continue;
+                }
+
+                var results = new List<(List<Location>, double, double)>();
+                foreach (var osrmRoute in routes.EnumerateArray())
+                {
+                    var dist   = osrmRoute.GetProperty("distance").GetDouble() / 1000.0;
+                    var dur    = osrmRoute.GetProperty("duration").GetDouble();
+                    var coords = osrmRoute.GetProperty("geometry").GetProperty("coordinates");
+
+                    var path = new List<Location>();
+                    foreach (var coord in coords.EnumerateArray())
+                        path.Add(new Location { Longitude = coord[0].GetDouble(), Latitude = coord[1].GetDouble() });
+
+                    results.Add((path, dist, dur));
+                }
+
+                if (results.Count > 0)
+                {
+                    return results;
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogWarning(ex, "OSRM ({Url}) isteğinde hata oluştu.", fullUrl);
+            }
+        }
+
+        return new();
     }
 
     // ─── Şarj süresi tahmini ────────────────────────────────────────────────
